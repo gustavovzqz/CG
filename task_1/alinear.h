@@ -13,12 +13,13 @@ class Ponto{
     double x, y, z;
     Ponto();
     Ponto(double x, double y, double z);
+    void set(double x, double y, double z);
 };
 
 
 class Cor{
     public:
-    int x, y, z;
+    int r, g, b;
     Cor();
     Cor(int x, int y, int z);
 };

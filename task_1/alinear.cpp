@@ -16,10 +16,16 @@ Ponto::Ponto(double a, double b, double c){
     this -> z = c;
 }
 
+void Ponto::set(double x, double y, double z){
+    this -> x = x;
+    this -> y = y;
+    this -> z = z;
+}
+
 Cor::Cor(int a, int b, int c){
-    this -> x = a;
-    this -> y = b;
-    this -> z = c;
+    this -> r = a;
+    this -> g = b;
+    this -> b = c;
 }
 
 
