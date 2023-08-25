@@ -6,7 +6,7 @@ class Canvas {
     int nLines;
     int nCol;
     Cor bgColor;
-    Cor matriz[200][200];
+    Cor** matriz;
     Canvas();
     Canvas(int nLines, int nCol, Cor bg); 
 };

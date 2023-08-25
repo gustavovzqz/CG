@@ -15,4 +15,4 @@ class Raio {
 bool intersecta(Raio r, Esfera e);
 
 // Posteriormente a Esfera será substituida por uma classe objeto.
-Cor raycasting(Esfera esf, Canvas c, Ponto pj);
+Cor raycasting(Esfera esf, Canvas c, Ponto pj, Ponto obs);
