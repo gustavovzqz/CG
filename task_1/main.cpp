@@ -6,8 +6,10 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 
+// TODO: Posteriormente passar essas duas funções para um outro arquivo.
+
 // Retorna uma matriz colorida! 
-void colorirMatriz(Ponto obs, Janela janela, Canvas *canvas, Esfera esfera, int dJanela){
+void colorirMatriz(Ponto obs, Janela janela, Canvas *canvas, Esfera esfera, int dJanela){ 
     double JyM = janela.jyMax;
     double jxMin = janela.jxMin;
     double dy = janela.dY;

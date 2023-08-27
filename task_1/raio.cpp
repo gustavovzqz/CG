@@ -9,11 +9,10 @@ Raio::Raio(Ponto pin, Ponto pr){
 }
 
 bool intersecta(Raio r, Esfera e){
-    Vetor w = subP(r.pin, e.cEsfera);
-    double a = innerProd(r.dr, r.dr);
-    double b = 2 * innerProd(w, r.dr);
+    Vetor w = subP(r.pin, e.cEsfera); 
+    double bBarra = innerProd(w, r.dr);
     double c = innerProd(w, w) - (e.rEsfera * e.rEsfera);
-    double delta = b * b - 4 * a * c;
+    double delta = bBarra * bBarra - c;
     return (delta >= 0);
 }
 
