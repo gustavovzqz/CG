@@ -14,6 +14,9 @@ class Ponto{
     Ponto();
     Ponto(double x, double y, double z);
     void set(double x, double y, double z);
+    void setX(double newX);
+    void setY(double newY);
+    void setZ(double newZ);
 };
 
 

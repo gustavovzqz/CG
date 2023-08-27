@@ -29,7 +29,7 @@ void colorirMatriz(Ponto obs, Janela janela, Canvas *canvas, Esfera esfera, int 
     }
 }
 
-void renderizar(SDL_Renderer* renderer, Canvas canvas){
+void renderizar(SDL_Renderer* renderer, Canvas canvas){ // Certo
 
     int nLin = canvas.nLines;
     int nCol = canvas.nCol;
@@ -44,7 +44,7 @@ void renderizar(SDL_Renderer* renderer, Canvas canvas){
             g = canvas.matriz[l][c].g;
             b = canvas.matriz[l][c].b;
             SDL_SetRenderDrawColor(renderer, r, g, b, 0); // Seta a cor, ignoramos o último parâmetro - RGBA
-            SDL_RenderDrawPoint(renderer, l, c); // Pinta propriamante
+            SDL_RenderDrawPoint(renderer, c, l); // Pinta propriamante
             
         }
     }
@@ -53,19 +53,19 @@ void renderizar(SDL_Renderer* renderer, Canvas canvas){
 
 int main(int argc, char* argv[]){
     int dJanela = 3000;
-    int rEsfera = 40;
-    int wJanela = 200;
-    int hJanela = 200;
-    int nLin = 200;
-    int nCol = 200;
+    int rEsfera = 100;
+    int wJanela = 1336;
+    int hJanela = 768;
+    int nLin = 768;
+    int nCol = 1336;
 
     Ponto cJanela = Ponto(0, 0, -dJanela);
     Ponto pObs = Ponto(0, 0, 0);
-    Esfera esf = Esfera(Ponto(0, 0, -(dJanela + rEsfera)), rEsfera, Cor(255, 255, 0));
-    Canvas c = Canvas(nLin, nCol, Cor(150, 150, 255));
+    Esfera esf = Esfera(Ponto(0, 0, -(dJanela + rEsfera)), rEsfera, Cor(255, 0, 0));
+    Canvas c = Canvas(nLin, nCol, Cor(100, 100, 100));
     Janela J = Janela(wJanela, hJanela, c);
 
-    colorirMatriz(pObs, J, &c, esf, dJanela);
+
 
     bool isRunning = true; //variável de controle do loop
     SDL_Event event; //variável para checar os eventos da janela
@@ -84,8 +84,8 @@ int main(int argc, char* argv[]){
         "CG I - Raycaster",       // Título da Janela
         SDL_WINDOWPOS_UNDEFINED,        // Posição inicial X
         SDL_WINDOWPOS_UNDEFINED,        // Posição inicial Y
-        200,                           // Largura da janela em pixels
-        200,                            // Altura da janela em pixels
+        nCol,                           // Largura da janela em pixels
+        nLin,                            // Altura da janela em pixels
         SDL_WINDOW_SHOWN                // Flags
     );
 
@@ -104,17 +104,34 @@ int main(int argc, char* argv[]){
     }
 
     while (isRunning){
-     while (SDL_PollEvent(&event)) {
+        while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 isRunning = false;
+            } else if (event.type == SDL_KEYDOWN) {
+            switch (event.key.keysym.sym) {
+            case SDLK_w: // Tecla W (mover para cima)
+                pObs.setZ(pObs.z + 10); // Altere o valor conforme necessário
+                break;
+            case SDLK_s: // Tecla S (mover para baixo)
+                pObs.setZ(pObs.z - 10); // Altere o valor conforme necessário
+                break;
+            case SDLK_a: // Tecla A (mover para a esquerda)
+                pObs.setX(pObs.x - 10); // Altere o valor conforme necessário
+                break;
+            case SDLK_d: // Tecla D (mover para a direita)
+                pObs.setX(pObs.x + 10); // Altere o valor conforme necessário
+                break;
+                }
             }
         }
+        colorirMatriz(pObs, J, &c, esf, dJanela);
         renderizar(renderer, c);
         SDL_RenderPresent(renderer);
     }
-SDL_DestroyRenderer(renderer);
+    SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
     return 0;
+
 }
 

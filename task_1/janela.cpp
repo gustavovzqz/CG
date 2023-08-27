@@ -1,5 +1,4 @@
 #include "janela.h"
-#include "canvas.h"
 
 Janela::Janela() {}
 

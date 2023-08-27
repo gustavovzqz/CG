@@ -22,6 +22,18 @@ void Ponto::set(double x, double y, double z){
     this -> z = z;
 }
 
+void Ponto::setX(double newX) {
+    this->x = newX;
+}
+
+void Ponto::setY(double newY) {
+    this->y = newY;
+}
+
+void Ponto::setZ(double newZ) {
+    this->z = newZ;
+}
+
 Cor::Cor(int a, int b, int c){
     this -> r = a;
     this -> g = b;
@@ -46,5 +58,5 @@ Vetor prodVetorC (Vetor v1, double t){
 }
 
 Vetor divVetorC (Vetor v1, double t){
-    return Vetor(t / v1.x, t / v1.y, t / v1.z);
+    return Vetor(v1.x / t, v1.y / t, v1.z / t);
 }
