@@ -4,11 +4,10 @@
 class Esfera : public Objeto {
 public:
     Ponto centro; 
-    double raio;
+    float raio;
     Cor cor;
     Esfera();
-    Esfera(Ponto centro, double raio, Cor cor, Intensidade Ke, Intensidade Ka, Intensidade Kd, double m);
+    Esfera(Ponto centro, float raio, Cor cor, Intensidade Ke, Intensidade Ka, Intensidade Kd, float m);
     Cor intersecta(Raio r, Luz i, Cor bgColor) override;
 
-    Vetor makeN(Ponto pint, Vetor dr) override;
 };

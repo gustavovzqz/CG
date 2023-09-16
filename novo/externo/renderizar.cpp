@@ -2,15 +2,15 @@
 
 // Retorna uma matriz colorida! 
 void colorirMatriz(Ponto obs, Janela janela, Canvas *canvas, Esfera cl, int dJanela, Luz i){ // Posteriormente passaremos o objeto Cenário
-    double JyM = janela.jyMax;
-    double jxMin = janela.jxMin;
-    double dy = janela.dY;
-    double dx = janela.dX;
+    float JyM = janela.jyMax;
+    float jxMin = janela.jxMin;
+    float dy = janela.dY;
+    float dx = janela.dX;
     int nLin = canvas->nLines;
     int nCol = canvas->nCol;
     Cor bgColor = canvas->bgColor;
-    double yL;
-    double xC;
+    float yL;
+    float xC;
     Ponto pJ;
     
     for (int l = 0; l < nLin; l++){

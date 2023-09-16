@@ -21,7 +21,7 @@ int main(int argc, char* argv[]){
     Ponto pObs = Ponto(0, 0, 0);
     Intensidade ke = Intensidade(0.3, 0.3, 0.3);
 
-    Esfera esf = Esfera(Ponto(0, 0, -(dJanela + rEsfera)), rEsfera, Cor(255, 0, 0), ke, ke, ke, 1);
+    Esfera esf = Esfera(Ponto(0, 0, -(dJanela + rEsfera)), rEsfera, Cor(255, 0, 0), ke, ke, ke, 1000);
     Canvas c = Canvas(nLin, nCol, Cor(100, 100, 100));
     Janela J = Janela(wJanela, hJanela, c);
 

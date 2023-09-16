@@ -8,25 +8,25 @@ Ponto::Ponto(){}
 Cor::Cor(){}
 
 
-Vetor::Vetor(double x, double y, double z){
+Vetor::Vetor(float x, float y, float z){
     this -> x = x;
     this -> y = y;
     this -> z = z;
 }
 
-Intensidade::Intensidade(double r, double g, double b){
+Intensidade::Intensidade(float r, float g, float b){
     this -> r = r;
     this -> g = g;
     this -> b = b;
 }
 
-Ponto::Ponto(double x, double y, double z){
+Ponto::Ponto(float x, float y, float z){
     this -> x = x;
     this -> y = y;
     this -> z = z;
 }
 
-Cor::Cor(double r, double g, double b){
+Cor::Cor(float r, float g, float b){
     this -> r = r;
     this -> g = g;
     this -> b = b;
@@ -34,22 +34,22 @@ Cor::Cor(double r, double g, double b){
 
 // (2) - Definições dos métodos "set" para o ponto.
 
-void Ponto::set(double x, double y, double z){
+void Ponto::set(float x, float y, float z){
     this -> x = x;
     this -> y = y;
     this -> z = z;
 };
 
-void Ponto::setX(double x){
+void Ponto::setX(float x){
     this -> x = x;
 };
 
-void Ponto::setY(double y){
+void Ponto::setY(float y){
     this -> y = y;
 };
 
 
-void Ponto::setZ(double z){
+void Ponto::setZ(float z){
     this -> z = z;
 };
 
@@ -67,11 +67,11 @@ Vetor addV (Vetor v1, Vetor v2){
     return Vetor(v1.x + v2.x, v1.y + v2.y, v2.z + v2.z);
 }
 
-Vetor prodVetorC(Vetor v1, double t){
+Vetor prodVetorC(Vetor v1, float t){
     return Vetor(v1.x * t, v1.y * t, v1.z * t);
 }
 
-Vetor divVetorC(Vetor v1, double t){
+Vetor divVetorC(Vetor v1, float t){
     return Vetor(v1.x / t, v1.y / t, v1.z / t);
 }
 
@@ -79,11 +79,11 @@ Ponto addPV(Ponto p1, Vetor v1){
     return Ponto(p1.x + v1.x, p1.y + v1.y, p1.z + v1.z);
 }
 
-double innerProd(Vetor v1, Vetor v2){
+float innerProd(Vetor v1, Vetor v2){
     return ((v1.x * v2.x) + (v1.y * v2.y) + (v1.z * v2.z));
 }
 
-double modulo(Vetor v1){
+float modulo(Vetor v1){
     return sqrt(innerProd(v1, v1));
 }
 
@@ -95,7 +95,7 @@ Intensidade arroba(Intensidade i1, Intensidade i2){
     return Intensidade(i1.r * i2.r, i1.g * i2.g, i1.b * i2.b);
 }
 
-Intensidade prodIntC(Intensidade i1, double t){
+Intensidade prodIntC(Intensidade i1, float t){
     return Intensidade(i1.r * t, i1.g * t, i1.b * t);
 }
 

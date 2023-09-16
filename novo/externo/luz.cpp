@@ -1,4 +1,5 @@
 #include "luz.h"
+#include <cmath>
 
 Luz::Luz(){}
 
@@ -8,18 +9,18 @@ Luz::Luz(Ponto pF, Intensidade iAmb, Intensidade iF){
     this -> iF = iF;
 }
 
-Cor Luz::iluminarObjeto(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Intensidade Kd, Intensidade Ka, double m, Cor cor){
+Cor Luz::iluminarObjeto(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Intensidade Kd, Intensidade Ka, float m, Cor cor){
     Intensidade total = Intensidade(0,0,0);
 
     Vetor l = normalizar(subP(pF, pint));
-    Vetor r = subV(prodVetorC(n, 2* innerProd(l,n)), l);
-    Vetor v = divVetorC(dr, -modulo(dr));
+    Vetor r = subV(prodVetorC(n, 2 * innerProd(l,n)), l);
+    Vetor v = prodVetorC(dr, -1);
 
-    double fdif = innerProd(l, n);
+    float fdif = innerProd(l, n);
 
-    double fesp = 0;
+    float fesp = 0;
     if (innerProd(r, v) > 0)
-        fesp = pow(innerProd(r, v), m);
+        fesp = pow(cos(innerProd(v, r)), 1);
     
     Intensidade dif = Intensidade(0,0,0);
     if (fdif > 0)
@@ -40,5 +41,5 @@ Cor Luz::iluminarObjeto(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Intensida
     if (eye.b > 1)
         eye.b = 1;
     
-    return prodICor(eye, cor);
+    return prodICor(eye, Cor(255,0,0));
 }

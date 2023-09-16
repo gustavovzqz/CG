@@ -6,7 +6,6 @@
 class Objeto {
     public: // Podemos adicionar coisas bases ao objeto posteriormente.
     Intensidade Ka, Kd, Ke;
-    double m;
+    float m;
     virtual Cor intersecta(Raio r, Luz i, Cor bgColor) = 0;
-    virtual Vetor makeN(Ponto pint, Vetor dr) = 0;
 };

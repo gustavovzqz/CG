@@ -8,5 +8,5 @@ class Luz {
 
     Luz();
     Luz(Ponto pF, Intensidade iAmb, Intensidade iF);
-    Cor iluminarObjeto(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Intensidade Kd, Intensidade Ka, double m, Cor cor);
+    Cor iluminarObjeto(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Intensidade Kd, Intensidade Ka, float m, Cor cor);
 };
