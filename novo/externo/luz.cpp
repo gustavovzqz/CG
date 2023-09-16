@@ -20,7 +20,7 @@ Cor Luz::iluminarObjeto(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Intensida
 
     float fesp = 0;
     if (innerProd(r, v) > 0)
-        fesp = pow(cos(innerProd(v, r)), m); // fesp = 
+        fesp = pow(innerProd(v, r)), m); // fesp = (v.r)^m
     
     Intensidade dif = Intensidade(0,0,0); // 
     if (fdif > 0)
