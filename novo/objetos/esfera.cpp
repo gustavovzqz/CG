@@ -42,7 +42,7 @@ Cor Esfera::intersecta(Raio r, Luz i, Cor bgColor){
     else 
         pint = p2;
 
-    Vetor n = divVetorC(subP(pint, centro), raio);
+    Vetor n = divVetorC(subP(pint, centro), raio); // (Pint - C) / R
     
     // Aqui, já temos o ponto de intersecção correto.
     // Basta chamar a função de iluminação para sabermos a cor correta.
