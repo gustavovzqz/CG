@@ -19,8 +19,8 @@ Cor Esfera::intersecta(Raio r, Luz i, Cor bgColor){
     Ponto pint;
 
 
-    Vetor w = subP(p0, centro); // Subtração dos pontos p0 e centro da esfera
-    float bBarra = innerProd(w, dr); // Produto interno de w e dr
+    Vetor w = subP(p0, centro);
+    float bBarra = innerProd(w, dr);
     float c = innerProd(w,w) - (raio * raio);
     float delta = (bBarra * bBarra) - c;
 
@@ -30,7 +30,7 @@ Cor Esfera::intersecta(Raio r, Luz i, Cor bgColor){
     float t1 = -bBarra - sqrt(delta);
     float t2 = -bBarra + sqrt(delta);
 
-    Ponto p1 = addPV(p0, prodVetorC(dr, t1)); // P(t) = P0 + dr*t
+    Ponto p1 = addPV(p0, prodVetorC(dr, t1));
     Ponto p2 = addPV(p0, prodVetorC(dr, t2));
 
     float tam_p1 = modulo(subP(p0, p1));
@@ -42,7 +42,7 @@ Cor Esfera::intersecta(Raio r, Luz i, Cor bgColor){
     else 
         pint = p2;
 
-    Vetor n = divVetorC(subP(pint, centro), raio); // (Pint - C) / R
+    Vetor n = divVetorC(subP(pint, centro), raio);
     
     // Aqui, já temos o ponto de intersecção correto.
     // Basta chamar a função de iluminação para sabermos a cor correta.

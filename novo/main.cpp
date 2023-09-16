@@ -16,12 +16,12 @@ int main(int argc, char* argv[]){
     int nCol = 500;
     int nLin = 500;
 
-    Luz luz = Luz(Ponto(0,5,0), Intensidade(0,0,0), Intensidade(0.7,0.7,0.7));
+    Luz luz = Luz(Ponto(0,100,0), Intensidade(0,0,0), Intensidade(0.7,0.7,0.7));
     Ponto cJanela = Ponto(0, 0, -dJanela);
     Ponto pObs = Ponto(0, 0, 0);
-    Intensidade ke = Intensidade(0.3, 0.3, 0.3);
+    Intensidade ke = Intensidade(1, 1, 1);
 
-    Esfera esf = Esfera(Ponto(0, 0, -(dJanela + rEsfera)), rEsfera, Cor(255, 0, 0), ke, ke, ke, 1000);
+    Esfera esf = Esfera(Ponto(0, 0, -(dJanela + rEsfera)), rEsfera, Cor(255, 0, 0), ke, ke, ke, 1);
     Canvas c = Canvas(nLin, nCol, Cor(100, 100, 100));
     Janela J = Janela(wJanela, hJanela, c);
 
