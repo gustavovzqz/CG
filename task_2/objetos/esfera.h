@@ -1,11 +1,13 @@
-#pragma once
+#pragma once 
 #include "../objeto/objeto.h"
+
 class Esfera : public Objeto {
-    public:
-    Ponto cEsfera;
-    double rEsfera;
-    Cor corEsfera;
+public:
+    Ponto centro; 
+    float raio;
+    Cor cor;
     Esfera();
-    Esfera(Ponto c, double r, Cor corEsfera);
-    Cor intersecta(Raio r, Iluminacao i);
+    Esfera(Ponto centro, float raio, Cor cor, Intensidade Ke, Intensidade Ka, Intensidade Kd, float m);
+    Cor intersecta(Raio r, Luz i, Cor bgColor) override;
+
 };

@@ -1,15 +1,16 @@
 #include "renderizar.h"
 
 // Retorna uma matriz colorida! 
-void colorirMatriz(Ponto obs, Janela janela, Canvas *canvas, Esfera cl, int dJanela, Iluminacao i){ // Posteriormente passaremos o objeto Cenário
-    double JyM = janela.jyMax;
-    double jxMin = janela.jxMin;
-    double dy = janela.dY;
-    double dx = janela.dX;
+void colorirMatriz(Ponto obs, Janela janela, Canvas *canvas, Esfera cl, int dJanela, Luz i){ // Posteriormente passaremos o objeto Cenário
+    float JyM = janela.jyMax;
+    float jxMin = janela.jxMin;
+    float dy = janela.dY;
+    float dx = janela.dX;
     int nLin = canvas->nLines;
     int nCol = canvas->nCol;
-    double yL;
-    double xC;
+    Cor bgColor = canvas->bgColor;
+    float yL;
+    float xC;
     Ponto pJ;
     
     for (int l = 0; l < nLin; l++){
@@ -17,7 +18,7 @@ void colorirMatriz(Ponto obs, Janela janela, Canvas *canvas, Esfera cl, int dJan
         for (int c = 0; c < nCol; c++){
             xC = jxMin + dx/2 + c*dx;
             pJ.set(xC, yL, -dJanela); 
-            canvas -> matriz[l][c] = cl.intersecta(Raio(obs, pJ), i); // Esfera será uma lista de objetos (cenário)
+            canvas -> matriz[l][c] = cl.intersecta(Raio(obs, pJ), i, bgColor); // Esfera será uma lista de objetos (cenário)
             
         }
     }

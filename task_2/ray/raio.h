@@ -9,4 +9,3 @@ class Raio {
     Raio();
     Raio(Ponto pin, Ponto pr);
 };
-

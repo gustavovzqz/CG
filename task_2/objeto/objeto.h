@@ -1,8 +1,11 @@
 #pragma once 
 #include "../externo/alinear.h"
-#include "../externo/iluminacao.h"
+#include "../externo/luz.h"
 #include "../ray/raio.h"
+
 class Objeto {
-    public: // Por enquanto o objeto está só assim, mas temos algumas propriedades comuns a todos os objetos por exemplo cores
-    virtual Cor intersecta(Raio r, Iluminacao i) = 0;
+    public: // Podemos adicionar coisas bases ao objeto posteriormente.
+    Intensidade Ka, Kd, Ke;
+    float m;
+    virtual Cor intersecta(Raio r, Luz i, Cor bgColor) = 0;
 };
