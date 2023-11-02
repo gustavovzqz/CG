@@ -11,6 +11,8 @@ set(SOURCES
     objetos/esfera.cpp
     objetos/cone.cpp
     objetos/plano.cpp
+    objetos/malha.cpp
+    objetos/teste.cpp
     cenario/cenario.cpp
     tela/janela.cpp
     externo/renderizar.cpp
@@ -19,7 +21,8 @@ set(SOURCES
 
 # Defina as opções de compilação, incluindo as flags do SDL2
 add_executable(main ${SOURCES})
-target_compile_options(main PRIVATE -lSDL2)
+target_compile_options(main PRIVATE -Wall -Wextra -pedantic)
+target_compile_features(main PRIVATE cxx_std_20) # para definir o padrão C++ para C++20
 
 # Encontre a biblioteca SDL2
 find_package(SDL2 REQUIRED)

@@ -67,13 +67,19 @@ CMakeFiles/main.dir/externo/renderizar.cpp.o: \
  /usr/include/c++/11/bits/exception_defines.h \
  /usr/include/c++/11/ext/numeric_traits.h \
  /usr/include/c++/11/bits/stl_pair.h /usr/include/c++/11/bits/move.h \
- /usr/include/c++/11/type_traits \
+ /usr/include/c++/11/type_traits /usr/include/c++/11/compare \
+ /usr/include/c++/11/concepts \
  /usr/include/c++/11/bits/stl_iterator_base_types.h \
+ /usr/include/c++/11/bits/iterator_concepts.h \
+ /usr/include/c++/11/bits/ptr_traits.h \
+ /usr/include/c++/11/bits/ranges_cmp.h \
  /usr/include/c++/11/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/11/bits/concept_check.h \
  /usr/include/c++/11/debug/assertions.h \
- /usr/include/c++/11/bits/stl_iterator.h \
- /usr/include/c++/11/bits/ptr_traits.h /usr/include/c++/11/debug/debug.h \
+ /usr/include/c++/11/bits/stl_iterator.h /usr/include/c++/11/new \
+ /usr/include/c++/11/bits/exception.h \
+ /usr/include/c++/11/bits/stl_construct.h \
+ /usr/include/c++/11/debug/debug.h \
  /usr/include/c++/11/bits/predefined_ops.h /usr/include/c++/11/limits \
  /usr/include/c++/11/tr1/gamma.tcc \
  /usr/include/c++/11/tr1/special_function_util.h \
@@ -94,17 +100,19 @@ CMakeFiles/main.dir/externo/renderizar.cpp.o: \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/../objetos/../objeto/../externo/luz.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/../tela/janela.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/../cenario/cenario.h \
- /usr/include/c++/11/vector /usr/include/c++/11/bits/allocator.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/cstdlib /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/initializer_list /usr/include/c++/11/bits/stl_heap.h \
+ /usr/include/c++/11/bits/stl_tempbuf.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /usr/include/c++/11/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
- /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \
- /usr/include/c++/11/bits/exception.h \
+ /usr/include/c++/11/ext/new_allocator.h \
  /usr/include/c++/11/bits/memoryfwd.h \
- /usr/include/c++/11/bits/stl_construct.h \
  /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/ext/alloc_traits.h \
  /usr/include/c++/11/bits/alloc_traits.h \
  /usr/include/c++/11/bits/stl_vector.h \
- /usr/include/c++/11/initializer_list \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/functional_hash.h \
  /usr/include/c++/11/bits/hash_bytes.h \
@@ -124,8 +132,8 @@ CMakeFiles/main.dir/externo/renderizar.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/c++/11/stdlib.h /usr/include/c++/11/cstdlib \
- /usr/include/string.h /usr/include/strings.h /usr/include/wchar.h \
+ /usr/include/c++/11/stdlib.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \

@@ -321,6 +321,30 @@ objetos/esfera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/objetos/esfera.cpp.s
 .PHONY : objetos/esfera.cpp.s
 
+objetos/malha.o: objetos/malha.cpp.o
+.PHONY : objetos/malha.o
+
+# target to build an object file
+objetos/malha.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/objetos/malha.cpp.o
+.PHONY : objetos/malha.cpp.o
+
+objetos/malha.i: objetos/malha.cpp.i
+.PHONY : objetos/malha.i
+
+# target to preprocess a source file
+objetos/malha.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/objetos/malha.cpp.i
+.PHONY : objetos/malha.cpp.i
+
+objetos/malha.s: objetos/malha.cpp.s
+.PHONY : objetos/malha.s
+
+# target to generate assembly for a file
+objetos/malha.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/objetos/malha.cpp.s
+.PHONY : objetos/malha.cpp.s
+
 objetos/plano.o: objetos/plano.cpp.o
 .PHONY : objetos/plano.o
 
@@ -344,6 +368,30 @@ objetos/plano.s: objetos/plano.cpp.s
 objetos/plano.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/objetos/plano.cpp.s
 .PHONY : objetos/plano.cpp.s
+
+objetos/teste.o: objetos/teste.cpp.o
+.PHONY : objetos/teste.o
+
+# target to build an object file
+objetos/teste.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/objetos/teste.cpp.o
+.PHONY : objetos/teste.cpp.o
+
+objetos/teste.i: objetos/teste.cpp.i
+.PHONY : objetos/teste.i
+
+# target to preprocess a source file
+objetos/teste.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/objetos/teste.cpp.i
+.PHONY : objetos/teste.cpp.i
+
+objetos/teste.s: objetos/teste.cpp.s
+.PHONY : objetos/teste.s
+
+# target to generate assembly for a file
+objetos/teste.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/objetos/teste.cpp.s
+.PHONY : objetos/teste.cpp.s
 
 ray/raio.o: ray/raio.cpp.o
 .PHONY : ray/raio.o
@@ -450,9 +498,15 @@ help:
 	@echo "... objetos/esfera.o"
 	@echo "... objetos/esfera.i"
 	@echo "... objetos/esfera.s"
+	@echo "... objetos/malha.o"
+	@echo "... objetos/malha.i"
+	@echo "... objetos/malha.s"
 	@echo "... objetos/plano.o"
 	@echo "... objetos/plano.i"
 	@echo "... objetos/plano.s"
+	@echo "... objetos/teste.o"
+	@echo "... objetos/teste.i"
+	@echo "... objetos/teste.s"
 	@echo "... ray/raio.o"
 	@echo "... ray/raio.i"
 	@echo "... ray/raio.s"

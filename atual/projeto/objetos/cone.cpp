@@ -36,10 +36,10 @@ Vetor Cone::normalCorpo(Raio r, double tint)
     Ponto pint = addPV(p0, prodVetorC(dr, tint));
     Vetor pintv = subP(v, pint);
     Vetor n = normalizar(vetorial(vetorial(pintv, dc), pintv));
-    if (innerProd(n, dr) > 0)
-        return prodVetorC(n, -1);
     return n;
 }
+
+// Repetição de código do tint com o intersecta pode ser removida usando a mesma solução usada na Malha
 double Cone::tInt(Raio r)
 {
     double t1 = intersecta_base(r);
@@ -74,6 +74,7 @@ Cor Cone::intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado)
     Vetor n;
     Ponto pint;
 
+    // Ta feito caso a caso saporra, da pra melhorar com certeza.
     if (t1 == -1 && t2 == -1)
         tint = -1;
     else if (t1 != -1 && t2 == -1)
@@ -108,17 +109,17 @@ Cor Cone::intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado)
 
 double Cone::intersecta_base(Raio r)
 {
-    Vetor n = dc;
-    Vetor w = subP(r.pin, cb);
-    double a = innerProd(n, r.dr);
+    Vetor n = dc, w = subP(r.pin, cb), auxiliar;
+    Ponto pint;
+    double a = innerProd(n, r.dr), tint, tamanho;
     if (a == 0)
     {
         return -1;
     }
-    double tint = -(innerProd(n, w) / a);
-    Ponto pint = addPV(r.pin, prodVetorC(r.dr, tint));
-    Vetor auxiliar = subP(pint, cb);
-    double tamanho = sqrt(innerProd(auxiliar, auxiliar));
+    tint = -(innerProd(n, w) / a);
+    pint = addPV(r.pin, prodVetorC(r.dr, tint));
+    auxiliar = subP(pint, cb);
+    tamanho = sqrt(innerProd(auxiliar, auxiliar));
     if ((tamanho < rb))
     {
         return tint;
@@ -128,32 +129,28 @@ double Cone::intersecta_base(Raio r)
 
 double Cone::intersecta_corpo(Raio r)
 {
-    Ponto p0 = r.pin;
+    Ponto p0 = r.pin, pi;
     Vetor dr = r.dr;
     Vetor v1 = subP(v, p0);
-    double cos2 = (h * h) / (rb * rb + h * h);
-    double dn = innerProd(dr, dc);
+    double cos2, dn, a, b, c, delta, t1, t2, aux, x;
+    cos2 = (h * h) / (rb * rb + h * h);
+    dn = innerProd(dr, dc);
 
-    double a = dn * dn - innerProd(dr, dr) * cos2;
-    double b = 2 * (innerProd(v1, dr) * cos2 - innerProd(v1, dc) * dn);
-    double c = innerProd(v1, dc) * innerProd(v1, dc) - innerProd(v1, v1) * cos2;
+    a = dn * dn - innerProd(dr, dr) * cos2;
+    b = 2 * (innerProd(v1, dr) * cos2 - innerProd(v1, dc) * dn);
+    c = innerProd(v1, dc) * innerProd(v1, dc) - innerProd(v1, v1) * cos2;
 
-    double delta = (b * b) - (4 * a * c);
+    delta = (b * b) - (4 * a * c);
     if ((delta < 0) || (a == 0))
         return -1;
 
-    double t1 = (-b - sqrt(delta)) / (2 * a);
-    double t2 = (-b + sqrt(delta)) / (2 * a);
-
-    double aux;
-    double x;
+    t1 = (-b - sqrt(delta)) / (2 * a);
+    t2 = (-b + sqrt(delta)) / (2 * a);
 
     if (t1 > t2)
         x = t2;
     else
         x = t1;
-
-    Ponto pi;
 
     if (x > 0)
     {

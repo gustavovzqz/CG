@@ -8,18 +8,19 @@
 #include "tela/janela.h"
 #include "externo/renderizar.h"
 #include "objetos/plano.h"
+#include "objetos/malha.h"
+#include "objetos/teste.h"
 #include <SDL2/SDL.h>
 
-int main(int argc, char *argv[])
+int main()
 {
-    int dJanela = 30; // Se tender ao infinito remove a distorção do movimento
+    int dJanela = 30;
     int wJanela = 60;
     int hJanela = 60;
-    int nCol = 500;
-    int nLin = 500;
+    int nCol = 600;
+    int nLin = 600;
     // Iambiente              / IPontual
-    Luz luz = Luz(Ponto(0, 60, -30), Intensidade(0.3, 0.3, 0.3), Intensidade(0.7, 0.7, 0.7));
-    Ponto cJanela = Ponto(0, 0, -dJanela);
+    Luz luz = Luz(Ponto(0, 0, -30), Intensidade(0.3, 0.3, 0.3), Intensidade(0.7, 0.7, 0.7));
     Ponto pObs = Ponto(0, 0, 0);
 
     // Intensidades esfera
@@ -58,7 +59,7 @@ int main(int argc, char *argv[])
     Intensidade ke_pc = Intensidade(0.0, 0.0, 0.0);
     Intensidade ka_pc = Intensidade(0.2, 0.7, 0.2);
 
-    Plano chao = Plano(Ponto(0, -40, 0), Vetor(0, 1, 0), ke_pc, ka_pc, kd_pc, 10);
+    Plano chao = Plano(Ponto(-120, -60, 0), Vetor(0, 1, 0), ke_pc, ka_pc, kd_pc, 10);
 
     // Intensidades plano fundo
     Intensidade kd_pf = Intensidade(0.3, 0.3, 0.7);
@@ -69,10 +70,12 @@ int main(int argc, char *argv[])
 
     Canvas c = Canvas(nLin, nCol, Cor(255, 255, 255));
     Janela J = Janela(wJanela, hJanela, c);
-
     Cenario cenario;
+    Teste tst = Teste(40, Ponto(0, -80, -100), kn, kn, kn, 10);
     cenario.cena.push_back(&fundo);
     cenario.cena.push_back(&chao);
+
+    cenario.cena.push_back(&tst);
     cenario.cena.push_back(&b1);
     cenario.cena.push_back(&b2);
     cenario.cena.push_back(&chapeu);
@@ -121,7 +124,6 @@ int main(int argc, char *argv[])
         SDL_Quit();
         return 1;
     }
-    int k = -20;
     while (isRunning)
     {
         while (SDL_PollEvent(&event))

@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/usr/include/SDL2
 
-CXX_FLAGS = -lSDL2
+CXX_FLAGS = -Wall -Wextra -pedantic -std=gnu++20
 

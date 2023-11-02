@@ -18,15 +18,12 @@ Objeto *Cenario::escolherObjeto(Raio r)
     return cena[indice];
 }
 
-bool Cenario::ehIluminado(Ponto p, Ponto pint_objeto, Objeto *obj, Vetor dr)
+bool Cenario::ehIluminado(Ponto p, Ponto pint_objeto, Objeto *obj)
 {
-    Raio r = Raio(p, pint_objeto); // Precisa ser o p do objeto
+    Raio r = Raio(p, pint_objeto); // P é ponto de luz e o pint do objeto, formamos o raio de luz
 
     double t_objeto = obj->tInt(r);
     double t;
-    Ponto pint = addPV(p, prodVetorC(dr, t_objeto));
-
-    Vetor l = prodVetorC(normalizar(subP(p, pint)), -1);
 
     for (int i = 0; i < cena.size(); i++)
     {

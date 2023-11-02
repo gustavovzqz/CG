@@ -48,6 +48,36 @@ public:
     Cor(float x, float y, float z);
 };
 
+class Vertice
+{
+public:
+    int id;
+    Ponto p;
+    Vertice();
+    Vertice(double id, Ponto p);
+};
+
+class Aresta
+{
+public:
+    int id, v1, v2;
+    Aresta();
+    Aresta(double id, double v1, double v2);
+};
+
+class Face
+{
+public:
+    int id, a1, a2, a3;
+    Vetor r1, r2, rx, n;
+    Ponto vc;
+    Face();
+    Face(int id, int a1, int a2, int a3);
+    void setRX(Vetor rx);
+    void setCommon(Ponto vc);
+    void setV(Vetor r1, Vetor r2, Vetor n);
+};
+
 // (2) - Definições de funções úteis
 
 Vetor subP(Ponto p1, Ponto p2);

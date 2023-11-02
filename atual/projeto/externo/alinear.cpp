@@ -6,13 +6,10 @@ Intensidade::Intensidade() {}
 Vetor::Vetor() {}
 Ponto::Ponto() {}
 Cor::Cor() {}
-Numero_vetor::Numero_vetor() {}
-
-Numero_vetor::Numero_vetor(double num, Vetor v)
-{
-    this->num = num;
-    this->v = v;
-}
+Aresta::Aresta() {}
+Face::Face() {}
+Vertice::Vertice() {}
+Numero_vetor::Numero_vetor(){};
 
 Vetor::Vetor(float x, float y, float z)
 {
@@ -66,7 +63,52 @@ void Ponto::setZ(float z)
     this->z = z;
 };
 
-// (3) - Definições de funções úteis
+// (3) - Declaração dos objetos para a malha
+Aresta::Aresta(double id, double v1, double v2)
+{
+    this->id = id;
+    this->v1 = v1;
+    this->v2 = v2;
+};
+
+Face::Face(int id, int a1, int a2, int a3)
+{
+    this->id = id;
+    this->a1 = a1;
+    this->a2 = a2;
+    this->a3 = a3;
+};
+
+Vertice::Vertice(double id, Ponto p)
+{
+    this->id = id;
+    this->p = p;
+};
+
+Numero_vetor::Numero_vetor(double num, Vetor v)
+{
+    this->num = num;
+    this->v = v;
+};
+
+void Face::setV(Vetor r1, Vetor r2, Vetor n)
+{
+    this->r1 = r1;
+    this->r2 = r2;
+    this->n = n;
+}
+
+void Face::setCommon(Ponto vc)
+{
+    this->vc = vc;
+}
+
+void Face::setRX(Vetor rx)
+{
+    this->rx = rx;
+}
+
+// (4) - Definições de funções úteis
 
 Vetor subP(Ponto p1, Ponto p2)
 {
