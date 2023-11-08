@@ -1,4 +1,4 @@
-# SDL Pixel Renderer
+# Computer Graphics
 
 ## Overview
 
