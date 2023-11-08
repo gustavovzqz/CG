@@ -1,6 +1,3 @@
-Claro, aqui está o README completo:
-
-```
 # SDL Pixel Renderer
 
 ## Overview
@@ -25,5 +22,5 @@ This project was inspired by the need to understand the fundamental concepts beh
 ## Contact
 
 For any questions or inquiries, please contact [gustavovzqzq.dev@gmail.com](gustavovzqz.dev@gmail.com).
-```
+
 
