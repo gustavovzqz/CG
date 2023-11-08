@@ -19,8 +19,3 @@ This project is an example implementation of pixel rendering using the SDL (Simp
 
 This project was inspired by the need to understand the fundamental concepts behind popular graphics libraries like OpenGL and Vulkan. Special thanks to the SDL community for providing a simple and effective framework for multimedia applications.
 
-## Contact
-
-For any questions or inquiries, please contact [gustavovzqzq.dev@gmail.com](gustavovzqz.dev@gmail.com).
-
-
