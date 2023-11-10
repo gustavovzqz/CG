@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/objetos/teste.cpp.o.d"
   "CMakeFiles/main.dir/ray/raio.cpp.o"
   "CMakeFiles/main.dir/ray/raio.cpp.o.d"
+  "CMakeFiles/main.dir/tela/camera.cpp.o"
+  "CMakeFiles/main.dir/tela/camera.cpp.o.d"
   "CMakeFiles/main.dir/tela/canvas.cpp.o"
   "CMakeFiles/main.dir/tela/canvas.cpp.o.d"
   "CMakeFiles/main.dir/tela/janela.cpp.o"

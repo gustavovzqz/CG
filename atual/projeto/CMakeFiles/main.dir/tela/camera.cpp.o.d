@@ -1,7 +1,8 @@
-CMakeFiles/main.dir/externo/alinear.cpp.o: \
- /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/alinear.cpp \
+CMakeFiles/main.dir/tela/camera.cpp.o: \
+ /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/camera.cpp \
  /usr/include/stdc-predef.h \
- /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/alinear.h \
+ /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/camera.h \
+ /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/../externo/alinear.h \
  /usr/include/c++/11/math.h /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

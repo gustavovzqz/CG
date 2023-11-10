@@ -417,6 +417,30 @@ ray/raio.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ray/raio.cpp.s
 .PHONY : ray/raio.cpp.s
 
+tela/camera.o: tela/camera.cpp.o
+.PHONY : tela/camera.o
+
+# target to build an object file
+tela/camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tela/camera.cpp.o
+.PHONY : tela/camera.cpp.o
+
+tela/camera.i: tela/camera.cpp.i
+.PHONY : tela/camera.i
+
+# target to preprocess a source file
+tela/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tela/camera.cpp.i
+.PHONY : tela/camera.cpp.i
+
+tela/camera.s: tela/camera.cpp.s
+.PHONY : tela/camera.s
+
+# target to generate assembly for a file
+tela/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tela/camera.cpp.s
+.PHONY : tela/camera.cpp.s
+
 tela/canvas.o: tela/canvas.cpp.o
 .PHONY : tela/canvas.o
 
@@ -510,6 +534,9 @@ help:
 	@echo "... ray/raio.o"
 	@echo "... ray/raio.i"
 	@echo "... ray/raio.s"
+	@echo "... tela/camera.o"
+	@echo "... tela/camera.i"
+	@echo "... tela/camera.s"
 	@echo "... tela/canvas.o"
 	@echo "... tela/canvas.i"
 	@echo "... tela/canvas.s"

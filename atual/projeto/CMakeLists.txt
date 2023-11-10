@@ -15,6 +15,7 @@ set(SOURCES
     objetos/teste.cpp
     cenario/cenario.cpp
     tela/janela.cpp
+    tela/camera.cpp
     externo/renderizar.cpp
     main.cpp
 )

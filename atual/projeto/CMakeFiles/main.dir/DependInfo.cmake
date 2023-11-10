@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/plano.cpp" "CMakeFiles/main.dir/objetos/plano.cpp.o" "gcc" "CMakeFiles/main.dir/objetos/plano.cpp.o.d"
   "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/teste.cpp" "CMakeFiles/main.dir/objetos/teste.cpp.o" "gcc" "CMakeFiles/main.dir/objetos/teste.cpp.o.d"
   "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/ray/raio.cpp" "CMakeFiles/main.dir/ray/raio.cpp.o" "gcc" "CMakeFiles/main.dir/ray/raio.cpp.o.d"
+  "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/camera.cpp" "CMakeFiles/main.dir/tela/camera.cpp.o" "gcc" "CMakeFiles/main.dir/tela/camera.cpp.o.d"
   "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/canvas.cpp" "CMakeFiles/main.dir/tela/canvas.cpp.o" "gcc" "CMakeFiles/main.dir/tela/canvas.cpp.o.d"
   "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/janela.cpp" "CMakeFiles/main.dir/tela/janela.cpp.o" "gcc" "CMakeFiles/main.dir/tela/janela.cpp.o.d"
   )

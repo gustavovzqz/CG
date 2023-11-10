@@ -6,29 +6,31 @@
 class Intensidade
 {
 public:
-    float r, g, b;
+    double r, g, b;
     Intensidade();
-    Intensidade(float r, float g, float b);
+    Intensidade(double r, double g, double b);
 };
 
 class Vetor
 {
 public:
-    float x, y, z;
+    double x, y, z, h;
     Vetor();
-    Vetor(float x, float y, float z);
+    Vetor(double x, double y, double z);
+    Vetor(double x, double y, double z, double h);
 };
 
 class Ponto
 {
 public:
-    float x, y, z;
+    double x, y, z, h;
     Ponto();
-    Ponto(float x, float y, float z);
-    void set(float x, float y, float z);
-    void setX(float x);
-    void setY(float y);
-    void setZ(float z);
+    Ponto(double x, double y, double z);
+    Ponto(double x, double y, double z, double h);
+    void set(double x, double y, double z);
+    void setX(double x);
+    void setY(double y);
+    void setZ(double z);
 };
 
 class Numero_vetor
@@ -43,9 +45,9 @@ public:
 class Cor
 {
 public:
-    float r, g, b;
+    double r, g, b;
     Cor();
-    Cor(float x, float y, float z);
+    Cor(double x, double y, double z);
 };
 
 class Vertice
@@ -78,20 +80,48 @@ public:
     void setV(Vetor r1, Vetor r2, Vetor n);
 };
 
+class Matriz
+{
+public:
+    Vetor v1, v2, v3, v4; // Vamos assumir que os vetores são vetores colunas... (abstratamente)
+    Matriz();
+    Matriz(Vetor v1, Vetor v2, Vetor v3, Vetor v4);
+};
+
 // (2) - Definições de funções úteis
 
+// Funções básicas PONTO VETOR
 Vetor subP(Ponto p1, Ponto p2);
 Vetor subV(Vetor v1, Vetor v2);
 Vetor addV(Vetor v1, Vetor v2);
-Vetor prodVetorC(Vetor v1, float t);
-Vetor divVetorC(Vetor v1, float t);
+Vetor prodVetorC(Vetor v1, double t);
+Vetor divVetorC(Vetor v1, double t);
 Vetor vetorial(Vetor v1, Vetor v2);
 Ponto addPV(Ponto p1, Vetor v1);
-float modulo(Vetor v1);
+double modulo(Vetor v1);
 Vetor normalizar(Vetor v1);
-float innerProd(Vetor v1, Vetor v2);
+double innerProd(Vetor v1, Vetor v2);
+
+// Funções básicas INTENSIDADE e COR
 Intensidade arroba(Intensidade i1, Intensidade i2);
-Intensidade prodIntC(Intensidade i1, float t);
+Intensidade prodIntC(Intensidade i1, double t);
 Intensidade somaI(Intensidade i1, Intensidade i2);
 Intensidade make_eye(Intensidade i1, Intensidade i2, Intensidade i3);
 Cor prodICor(Intensidade i1, Cor c1);
+
+// Funções básicas operações com matrizes
+Vetor prodVM(Vetor v, Matriz m);
+Vetor prodMV(Matriz m, Vetor v);
+Ponto prodMP(Matriz m, Ponto p);
+Matriz subM(Matriz m1, Matriz m2); // TODO: Alguns não tão feitos ainda
+Matriz somaM(Matriz m1, Matriz m2);
+Matriz prodCL(Vetor vc, Vetor vl); // Produto de um vetor COLUNA por um vetor LINHA
+Matriz prodMM(Matriz m1, Matriz m2);
+
+// Declarando propriamente as matrizes
+
+Matriz mES(double sx, double xy, double sz);
+Matriz rX(double a);
+Matriz rY(double a);
+Matriz rZ(double a);
+Matriz id();
