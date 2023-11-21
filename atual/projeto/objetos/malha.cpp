@@ -107,15 +107,11 @@ double Malha::tInt(Raio r)
     return (aux.num);
 }
 
-Cor Malha::intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado)
+Intensidade Malha::intersecta(Raio r, Luz i)
 {
     Numero_vetor tint_n = tIntaux(r);
-    if (tint_n.num == -1)
-    {
-        // std::cout << "retornou bg color";
-        return bgColor;
-    }
+
     Ponto pint = addPV(r.pin, prodVetorC(r.dr, tint_n.num));
 
-    return (i.iluminarObjeto(tint_n.v, pint, r.dr, Ke, Kd, Ka, m, ehiluminado));
+    return (i.iluminarObjeto(tint_n.v, pint, r.dr, Ke, Kd, m));
 }

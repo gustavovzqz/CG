@@ -18,34 +18,64 @@ int main()
     int dJanela = 30;
     int wJanela = 60;
     int hJanela = 60;
-    int nCol = 600;
-    int nLin = 600;
+    int nCol = 500;
+    int nLin = 500;
 
     // Iambiente              / IPontual
-    Luz luz = Luz(Ponto(0, 0, 0), Intensidade(0.3, 0.3, 0.3), Intensidade(0.7, 0.7, 0.7));
-    Camera cam = Camera(Ponto(10, 0, 0), Ponto(0, 1, 0), Ponto(20, 0, 0));
+    Camera cam = Camera(Ponto(0, 0, 0), Ponto(0, 1, 0), Ponto(0, 0, -1));
+
+    // Iambiente              / IPontual
+    // Luz(Ponto pF, Intensidade iF, Vetor ds, double alfa);
+    Luz luz = Luz(Ponto(0, 0, 0), Intensidade(0.3, 0.3, 0.3), Vetor(0, 0, -1), 0.6);
+    Luz luz1 = Luz(Ponto(0, 60, -30), Intensidade(0.5, 0.5, 0.5));
+    Luz luz3 = Luz(Intensidade(0.7, 0.7, 0.7), Vetor(0, -1, 0));
 
     // Intensidades esfera
-    Intensidade kd_e = Intensidade(1, 1, 1);
-    Intensidade ke_e = Intensidade(0.2, 0.2, 0.2);
-    Intensidade ka_e = Intensidade(1, 1, 1);
+    Intensidade kd_e = Intensidade(0.7, 0.2, 0.2);
+    Intensidade ke_e = Intensidade(0.7, 0.2, 0.2);
+    Intensidade ka_e = Intensidade(0.7, 0.2, 0.2);
+    // ke ka kd
+    Esfera esf = Esfera(Ponto(0, 0, -100), 40, ke_e, ka_e, kd_e, 10);
 
-    Esfera b1 = Esfera(Ponto(20, 0, 0), 10, ke_e, ka_e, kd_e, 10);
+    // Intensidades Cilindro
+    Intensidade kd_ci = Intensidade(0.2, 0.3, 0.8);
+
+    // Direção
+    Vetor dc = Vetor(-1 / sqrt(3), 1 / sqrt(3), -1 / sqrt(3));
+
+    Cilindro ci = Cilindro(Ponto(0, 0, -100), dc, 40 / 3, 120, kd_ci, kd_ci, kd_ci, 10);
+
+    // Intensidades plano chao
+    Intensidade kd_pc = Intensidade(0.2, 0.7, 0.2);
+    Intensidade ke_pc = Intensidade(0.0, 0.0, 0.0);
+    Intensidade ka_pc = Intensidade(0.2, 0.7, 0.2);
+
+    Plano chao = Plano(Ponto(0, -40, 0), Vetor(0, 1, 0), ke_pc, ka_pc, kd_pc, 10);
 
     // Intensidades plano fundo
     Intensidade kd_pf = Intensidade(0.3, 0.3, 0.7);
     Intensidade ke_pf = Intensidade(0.0, 0.0, 0.0);
     Intensidade ka_pf = Intensidade(0.3, 0.3, 0.7);
 
-    Plano fundo = Plano(Ponto(200, 0, 0), Vetor(-1, 0, 0), ke_pf, ka_pf, kd_pf, 1);
+    // Cone:
+    Intensidade k_cone = Intensidade(0.8, 0.3, 0.2);
+    // Cone(Ponto cb, double r, Vetor dc, double h, Intensidade Ke, Intensidade Ka, Intensidade Kd, float m);
+    Cone con = Cone(ci.ct, 60, dc, 20, k_cone, k_cone, k_cone, 10);
+
+    Plano fundo = Plano(Ponto(0, 0, -200), Vetor(0, 0, 1), ke_pf, ka_pf, kd_pf, 1);
 
     Canvas c = Canvas(nLin, nCol, Cor(255, 255, 255));
     Janela J = Janela(wJanela, hJanela, c);
-    Cenario cenario;
 
+    Cenario cenario{Intensidade(0.2, 0.2, 0.2)};
+    cenario.cena.push_back(&esf);
     cenario.cena.push_back(&fundo);
-
-    cenario.cena.push_back(&b1);
+    cenario.cena.push_back(&chao);
+    cenario.cena.push_back(&ci);
+    cenario.cena.push_back(&con);
+    cenario.luzes.push_back(&luz3);
+    // cenario.luzes.push_back(&luz);
+    //  cenario.luzes.push_back(&luz1);
 
     // ------ Comandos SDL para inicializar a tela -------------
 
@@ -92,10 +122,9 @@ int main()
             {
                 isRunning = false;
             }
+            // Se o evento for de clique...
         }
-        // Luz luz = Luz(Ponto(0, k, 0), Intensidade(0.2,0.2,0.2), Intensidade(0.7,0.7,0.7));
-        // k+=3;
-        colorirMatriz(cam, J, &c, cenario, dJanela, luz);
+        colorirMatriz(cam, J, &c, cenario, dJanela);
         renderizar(renderer, c);
         SDL_RenderPresent(renderer);
     }

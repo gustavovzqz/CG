@@ -29,6 +29,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/tela/canvas.cpp.o.d"
   "CMakeFiles/main.dir/tela/janela.cpp.o"
   "CMakeFiles/main.dir/tela/janela.cpp.o.d"
+  "CMakeFiles/main.dir/tela/textura.cpp.o"
+  "CMakeFiles/main.dir/tela/textura.cpp.o.d"
   "main"
   "main.pdb"
 )

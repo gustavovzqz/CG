@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/camera.cpp" "CMakeFiles/main.dir/tela/camera.cpp.o" "gcc" "CMakeFiles/main.dir/tela/camera.cpp.o.d"
   "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/canvas.cpp" "CMakeFiles/main.dir/tela/canvas.cpp.o" "gcc" "CMakeFiles/main.dir/tela/canvas.cpp.o.d"
   "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/janela.cpp" "CMakeFiles/main.dir/tela/janela.cpp.o" "gcc" "CMakeFiles/main.dir/tela/janela.cpp.o.d"
+  "/home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/textura.cpp" "CMakeFiles/main.dir/tela/textura.cpp.o" "gcc" "CMakeFiles/main.dir/tela/textura.cpp.o.d"
   )
 
 # Targets to which this target links.

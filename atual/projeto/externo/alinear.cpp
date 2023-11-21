@@ -271,3 +271,129 @@ Matriz id()
 {
     return Matriz(Vetor(1, 0, 0, 0), Vetor(0, 1, 0, 0), Vetor(0, 0, 1, 0), Vetor(0, 0, 0, 1));
 }
+
+Matriz mT(double tx, double ty, double tz)
+{
+    return Matriz(Vetor(1, 0, 0, 0),
+                  Vetor(0, 1, 0, 0),
+                  Vetor(0, 0, 1, 0),
+                  Vetor(tx, ty, tz, 1));
+}
+
+Matriz mE(double sx, double sy, double sz)
+{
+    return Matriz(Vetor(sx, 0, 0, 0),
+                  Vetor(0, sy, 0, 0),
+                  Vetor(0, 0, sz, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz rX(double a)
+{
+    return Matriz(Vetor(1, 0, 0, 0),
+                  Vetor(0, cos(a), sin(a), 0),
+                  Vetor(0, -sin(a), cos(a), 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz rY(double a)
+{
+    return Matriz(Vetor(cos(a), 0, -sin(a), 0),
+                  Vetor(0, 1, 0, 0),
+                  Vetor(sin(a), 0, cos(a), 0),
+                  Vetor(0, 0, 0, 0));
+}
+Matriz rZ(double a)
+{
+    return Matriz(Vetor(cos(a), sin(a), 0, 0),
+                  Vetor(-sin(a), cos(a), 0, 0),
+                  Vetor(0, 0, 1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz Exy()
+{
+    return Matriz(Vetor(1, 0, 0, 0),
+                  Vetor(0, 1, 0, 0),
+                  Vetor(0, 0, -1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz Exz()
+{
+    return Matriz(Vetor(1, 0, 0, 0),
+                  Vetor(0, -1, 0, 0),
+                  Vetor(0, 0, 1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz Eyz()
+{
+    return Matriz(Vetor(-1, 0, 0, 0),
+                  Vetor(0, 1, 0, 0),
+                  Vetor(0, 0, 1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz Cyx(double gama)
+{
+    return Matriz(Vetor(1, 0, 0, 0),
+                  Vetor(tan(gama), 1, 0, 0),
+                  Vetor(0, 0, 1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz Cxy(double gama)
+{
+    return Matriz(Vetor(1, tan(gama), 0, 0),
+                  Vetor(0, 1, 0, 0),
+                  Vetor(0, 0, 1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz Cxz(double gama)
+{
+    return Matriz(Vetor(1, 0, tan(gama), 0),
+                  Vetor(0, 1, 0, 0),
+                  Vetor(0, 0, 1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz Czx(double gama)
+{
+    return Matriz(Vetor(1, 0, 0, 0),
+                  Vetor(0, 1, 0, 0),
+                  Vetor(tan(gama), 0, 1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz Czy(double gama)
+{
+    return Matriz(Vetor(1, 0, 0, 0),
+                  Vetor(0, 1, 0, 0),
+                  Vetor(0, tan(gama), 1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+Matriz Cyz(double gama)
+{
+    return Matriz(Vetor(1, 0, 0, 0),
+                  Vetor(0, 1, tan(gama), 0),
+                  Vetor(0, 0, 1, 0),
+                  Vetor(0, 0, 0, 1));
+}
+
+// Quaternions ou o outro.
+
+Matriz Raxis(double x, double y, double z, double w)
+{
+    w = w / 2; // O ângulo nos cálculos deve ser equivalente a metade.
+    double w2 = w * w;
+    double x2 = x * x;
+    double y2 = y * y;
+    double z2 = z * z;
+    return Matriz(Vetor(w2 + x2 - y2 - z2, 2 * x * y + 2 * w * z, 2 * x * z - 2 * w * y, 0),
+                  Vetor(2 * x * y - 2 * w * z, w2 - x2 + y2 - z2, 2 * y * z + 2 * x * w, 0),
+                  Vetor(2 * x * z + 2 * w * y, 2 * y * z - 2 * w * x, w2 - x2 - y2 + z2, 0),
+                  Vetor(0, 0, 0, w2 + x2 + y2 + z2));
+}

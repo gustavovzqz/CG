@@ -489,6 +489,30 @@ tela/janela.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tela/janela.cpp.s
 .PHONY : tela/janela.cpp.s
 
+tela/textura.o: tela/textura.cpp.o
+.PHONY : tela/textura.o
+
+# target to build an object file
+tela/textura.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tela/textura.cpp.o
+.PHONY : tela/textura.cpp.o
+
+tela/textura.i: tela/textura.cpp.i
+.PHONY : tela/textura.i
+
+# target to preprocess a source file
+tela/textura.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tela/textura.cpp.i
+.PHONY : tela/textura.cpp.i
+
+tela/textura.s: tela/textura.cpp.s
+.PHONY : tela/textura.s
+
+# target to generate assembly for a file
+tela/textura.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tela/textura.cpp.s
+.PHONY : tela/textura.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -543,6 +567,9 @@ help:
 	@echo "... tela/janela.o"
 	@echo "... tela/janela.i"
 	@echo "... tela/janela.s"
+	@echo "... tela/textura.o"
+	@echo "... tela/textura.i"
+	@echo "... tela/textura.s"
 .PHONY : help
 
 

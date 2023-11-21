@@ -4,7 +4,7 @@ CMakeFiles/main.dir/objetos/esfera.cpp.o: \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/esfera.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/../objeto/objeto.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/../objeto/../externo/alinear.h \
- /usr/include/c++/11/math.h /usr/include/c++/11/cmath \
+ /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -96,4 +96,5 @@ CMakeFiles/main.dir/objetos/esfera.cpp.o: \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/../objeto/../externo/luz.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/../objeto/../ray/raio.h \
- /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/../objeto/../ray/../tela/canvas.h
+ /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/../objeto/../ray/../tela/canvas.h \
+ /usr/include/c++/11/math.h

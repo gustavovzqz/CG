@@ -125,10 +125,24 @@ CMakeFiles/main.dir/ray/raio.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/ray/raio.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gustavofvv/Faculdade/S4/CG/atual/projeto/ray/raio.cpp -o CMakeFiles/main.dir/ray/raio.cpp.s
 
+CMakeFiles/main.dir/tela/textura.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/tela/textura.cpp.o: tela/textura.cpp
+CMakeFiles/main.dir/tela/textura.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/tela/textura.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/tela/textura.cpp.o -MF CMakeFiles/main.dir/tela/textura.cpp.o.d -o CMakeFiles/main.dir/tela/textura.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/textura.cpp
+
+CMakeFiles/main.dir/tela/textura.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/tela/textura.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/textura.cpp > CMakeFiles/main.dir/tela/textura.cpp.i
+
+CMakeFiles/main.dir/tela/textura.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/tela/textura.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/textura.cpp -o CMakeFiles/main.dir/tela/textura.cpp.s
+
 CMakeFiles/main.dir/objetos/cilindro.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/objetos/cilindro.cpp.o: objetos/cilindro.cpp
 CMakeFiles/main.dir/objetos/cilindro.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/objetos/cilindro.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/objetos/cilindro.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/objetos/cilindro.cpp.o -MF CMakeFiles/main.dir/objetos/cilindro.cpp.o.d -o CMakeFiles/main.dir/objetos/cilindro.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/cilindro.cpp
 
 CMakeFiles/main.dir/objetos/cilindro.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/main.dir/objetos/cilindro.cpp.s: cmake_force
 CMakeFiles/main.dir/objetos/esfera.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/objetos/esfera.cpp.o: objetos/esfera.cpp
 CMakeFiles/main.dir/objetos/esfera.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/objetos/esfera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/objetos/esfera.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/objetos/esfera.cpp.o -MF CMakeFiles/main.dir/objetos/esfera.cpp.o.d -o CMakeFiles/main.dir/objetos/esfera.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/esfera.cpp
 
 CMakeFiles/main.dir/objetos/esfera.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/main.dir/objetos/esfera.cpp.s: cmake_force
 CMakeFiles/main.dir/objetos/cone.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/objetos/cone.cpp.o: objetos/cone.cpp
 CMakeFiles/main.dir/objetos/cone.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/objetos/cone.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/objetos/cone.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/objetos/cone.cpp.o -MF CMakeFiles/main.dir/objetos/cone.cpp.o.d -o CMakeFiles/main.dir/objetos/cone.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/cone.cpp
 
 CMakeFiles/main.dir/objetos/cone.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/main.dir/objetos/cone.cpp.s: cmake_force
 CMakeFiles/main.dir/objetos/plano.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/objetos/plano.cpp.o: objetos/plano.cpp
 CMakeFiles/main.dir/objetos/plano.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/objetos/plano.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/objetos/plano.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/objetos/plano.cpp.o -MF CMakeFiles/main.dir/objetos/plano.cpp.o.d -o CMakeFiles/main.dir/objetos/plano.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/plano.cpp
 
 CMakeFiles/main.dir/objetos/plano.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/main.dir/objetos/plano.cpp.s: cmake_force
 CMakeFiles/main.dir/objetos/malha.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/objetos/malha.cpp.o: objetos/malha.cpp
 CMakeFiles/main.dir/objetos/malha.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/objetos/malha.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/objetos/malha.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/objetos/malha.cpp.o -MF CMakeFiles/main.dir/objetos/malha.cpp.o.d -o CMakeFiles/main.dir/objetos/malha.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/malha.cpp
 
 CMakeFiles/main.dir/objetos/malha.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/main.dir/objetos/malha.cpp.s: cmake_force
 CMakeFiles/main.dir/objetos/teste.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/objetos/teste.cpp.o: objetos/teste.cpp
 CMakeFiles/main.dir/objetos/teste.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/objetos/teste.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/objetos/teste.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/objetos/teste.cpp.o -MF CMakeFiles/main.dir/objetos/teste.cpp.o.d -o CMakeFiles/main.dir/objetos/teste.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/teste.cpp
 
 CMakeFiles/main.dir/objetos/teste.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/main.dir/objetos/teste.cpp.s: cmake_force
 CMakeFiles/main.dir/cenario/cenario.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/cenario/cenario.cpp.o: cenario/cenario.cpp
 CMakeFiles/main.dir/cenario/cenario.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/cenario/cenario.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/cenario/cenario.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/cenario/cenario.cpp.o -MF CMakeFiles/main.dir/cenario/cenario.cpp.o.d -o CMakeFiles/main.dir/cenario/cenario.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/cenario/cenario.cpp
 
 CMakeFiles/main.dir/cenario/cenario.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/main.dir/cenario/cenario.cpp.s: cmake_force
 CMakeFiles/main.dir/tela/janela.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/tela/janela.cpp.o: tela/janela.cpp
 CMakeFiles/main.dir/tela/janela.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/tela/janela.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/tela/janela.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/tela/janela.cpp.o -MF CMakeFiles/main.dir/tela/janela.cpp.o.d -o CMakeFiles/main.dir/tela/janela.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/janela.cpp
 
 CMakeFiles/main.dir/tela/janela.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/main.dir/tela/janela.cpp.s: cmake_force
 CMakeFiles/main.dir/tela/camera.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/tela/camera.cpp.o: tela/camera.cpp
 CMakeFiles/main.dir/tela/camera.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/tela/camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/tela/camera.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/tela/camera.cpp.o -MF CMakeFiles/main.dir/tela/camera.cpp.o.d -o CMakeFiles/main.dir/tela/camera.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/camera.cpp
 
 CMakeFiles/main.dir/tela/camera.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/main.dir/tela/camera.cpp.s: cmake_force
 CMakeFiles/main.dir/externo/renderizar.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/externo/renderizar.cpp.o: externo/renderizar.cpp
 CMakeFiles/main.dir/externo/renderizar.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/externo/renderizar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/externo/renderizar.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/externo/renderizar.cpp.o -MF CMakeFiles/main.dir/externo/renderizar.cpp.o.d -o CMakeFiles/main.dir/externo/renderizar.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/renderizar.cpp
 
 CMakeFiles/main.dir/externo/renderizar.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/main.dir/externo/renderizar.cpp.s: cmake_force
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/gustavofvv/Faculdade/S4/CG/atual/projeto/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
@@ -285,6 +299,7 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/externo/luz.cpp.o" \
 "CMakeFiles/main.dir/tela/canvas.cpp.o" \
 "CMakeFiles/main.dir/ray/raio.cpp.o" \
+"CMakeFiles/main.dir/tela/textura.cpp.o" \
 "CMakeFiles/main.dir/objetos/cilindro.cpp.o" \
 "CMakeFiles/main.dir/objetos/esfera.cpp.o" \
 "CMakeFiles/main.dir/objetos/cone.cpp.o" \
@@ -304,6 +319,7 @@ main: CMakeFiles/main.dir/externo/alinear.cpp.o
 main: CMakeFiles/main.dir/externo/luz.cpp.o
 main: CMakeFiles/main.dir/tela/canvas.cpp.o
 main: CMakeFiles/main.dir/ray/raio.cpp.o
+main: CMakeFiles/main.dir/tela/textura.cpp.o
 main: CMakeFiles/main.dir/objetos/cilindro.cpp.o
 main: CMakeFiles/main.dir/objetos/esfera.cpp.o
 main: CMakeFiles/main.dir/objetos/cone.cpp.o
@@ -316,8 +332,9 @@ main: CMakeFiles/main.dir/tela/camera.cpp.o
 main: CMakeFiles/main.dir/externo/renderizar.cpp.o
 main: CMakeFiles/main.dir/main.cpp.o
 main: CMakeFiles/main.dir/build.make
+main: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

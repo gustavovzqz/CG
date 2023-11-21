@@ -13,5 +13,5 @@ public:
     void initNormais();
     Numero_vetor tIntaux(Raio r);
     double tInt(Raio r);
-    Cor intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado) override;
+    Intensidade intersecta(Raio r, Luz i) override;
 };

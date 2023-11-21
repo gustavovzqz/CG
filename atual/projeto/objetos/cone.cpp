@@ -66,7 +66,7 @@ double Cone::tInt(Raio r)
     return tint;
 }
 
-Cor Cone::intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado)
+Intensidade Cone::intersecta(Raio r, Luz i)
 {
     double t1 = intersecta_base(r);
     double t2 = intersecta_corpo(r);
@@ -98,13 +98,8 @@ Cor Cone::intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado)
         n = prodVetorC(dc, -1);
     }
 
-    if (tint == -1)
-    {
-        return bgColor;
-    }
-
     pint = addPV(r.pin, prodVetorC(r.dr, tint));
-    return (i.iluminarObjeto(n, pint, r.dr, Ke, Kd, Ka, m, ehiluminado));
+    return (i.iluminarObjeto(n, pint, r.dr, Ke, Kd, m));
 }
 
 double Cone::intersecta_base(Raio r)

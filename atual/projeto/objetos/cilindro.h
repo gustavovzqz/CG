@@ -1,5 +1,6 @@
 #pragma once
 #include "../objeto/objeto.h"
+#include "../tela/textura.h"
 
 class Cilindro : public Objeto
 {
@@ -12,7 +13,7 @@ public:
     Cilindro();
     Cilindro(Ponto cb, Ponto ct, double r, Intensidade Ke, Intensidade Ka, Intensidade Kd, float m);
     Cilindro(Ponto cb, Vetor dc, double rc, double h, Intensidade Ke, Intensidade Ka, Intensidade Kd, float m);
-    Cor intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado) override;
+    Intensidade intersecta(Raio r, Luz i) override;
     double intersecta_corpo(Raio r);
     double intersecta_tampa(Raio r);
     double intersecta_base(Raio r);

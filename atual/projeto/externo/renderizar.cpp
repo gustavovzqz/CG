@@ -1,8 +1,7 @@
 #include "renderizar.h"
-#include <iostream>
 
 // Retorna uma matriz colorida!
-void colorirMatriz(Camera cam, Janela janela, Canvas *canvas, Cenario cenario, int dJanela, Luz i)
+void colorirMatriz(Camera cam, Janela janela, Canvas *canvas, Cenario cenario, int dJanela)
 {
     Ponto obs = cam.obs;
     float JyM = janela.jyMax;
@@ -17,7 +16,6 @@ void colorirMatriz(Camera cam, Janela janela, Canvas *canvas, Cenario cenario, i
     float xC;
     Ponto pJ;
     Objeto *obj;
-    bool ehiluminado;
 
     for (int l = 0; l < nLin; l++)
     {
@@ -30,8 +28,9 @@ void colorirMatriz(Camera cam, Janela janela, Canvas *canvas, Cenario cenario, i
             raio = Raio(obs, pJ);
             obj = cenario.escolherObjeto(raio);
             Ponto pint_objeto = addPV(raio.pin, prodVetorC(raio.dr, obj->tInt(raio)));
-            ehiluminado = cenario.ehIluminado(i.pF, pint_objeto, obj);
-            canvas->matriz[l][c] = obj->intersecta(raio, i, bgColor, ehiluminado); // Esfera será uma lista de objetos (cenário)
+            /* A gente passa pro objeto o Cenário
+               A função de iluminação do objeto será do próprio cenário...*/
+            canvas->matriz[l][c] = cenario.iluminarObjeto(raio, pint_objeto, obj, bgColor); // Esfera será uma lista de objetos (cenário)
         }
     }
 }

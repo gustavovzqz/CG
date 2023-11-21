@@ -20,16 +20,14 @@ double Plano::tInt(Raio r)
     return (-(innerProd(n_bar, w) / innerProd(n_bar, dr)));
 }
 
-Cor Plano::intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado)
+Intensidade Plano::intersecta(Raio r, Luz i)
 {
     double tint;
     Ponto p0 = r.pin, pint;
     Vetor dr = r.dr;
 
     tint = tInt(r);
-    if (tint < 0)
-        return bgColor;
     pint = addPV(p0, prodVetorC(dr, tint));
 
-    return (i.iluminarObjeto(n_bar, pint, dr, Ke, Kd, Ka, m, ehiluminado));
+    return (i.iluminarObjeto(n_bar, pint, dr, Ke, Kd, m));
 }

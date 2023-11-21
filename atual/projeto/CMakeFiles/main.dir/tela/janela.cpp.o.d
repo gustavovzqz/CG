@@ -4,7 +4,7 @@ CMakeFiles/main.dir/tela/janela.cpp.o: \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/janela.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/canvas.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/../externo/alinear.h \
- /usr/include/c++/11/math.h /usr/include/c++/11/cmath \
+ /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

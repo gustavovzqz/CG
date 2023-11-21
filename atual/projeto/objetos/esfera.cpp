@@ -36,16 +36,14 @@ double Esfera::tInt(Raio r)
     return -1;
 }
 
-Cor Esfera::intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado)
+Intensidade Esfera::intersecta(Raio r, Luz i)
 {
     Ponto p0 = r.pin, pint;
     Vetor dr = r.dr, n;
     double tint = tInt(r);
-    if (tint < 0)
-        return bgColor;
     pint = addPV(p0, prodVetorC(dr, tint));
     n = divVetorC(subP(pint, centro), raio);
     // Aqui, já temos o ponto de intersecção correto.
     // Basta chamar a função de iluminação para sabermos a cor correta.
-    return (i.iluminarObjeto(n, pint, dr, Ke, Kd, Ka, m, ehiluminado));
+    return (i.iluminarObjeto(n, pint, dr, Ke, Kd, m));
 }

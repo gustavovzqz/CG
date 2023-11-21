@@ -2,7 +2,7 @@ CMakeFiles/main.dir/externo/alinear.cpp.o: \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/alinear.cpp \
  /usr/include/stdc-predef.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/alinear.h \
- /usr/include/c++/11/math.h /usr/include/c++/11/cmath \
+ /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

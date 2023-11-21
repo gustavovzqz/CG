@@ -221,6 +221,12 @@ MeuProgramaC++_SOURCE_DIR:STATIC=/home/gustavofvv/Faculdade/S4/CG/atual/projeto
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL2
 
+//Path to a file.
+SDL_IMAGE_INCLUDE_DIR:PATH=SDL_IMAGE_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+SDL_IMAGE_LIBRARY:FILEPATH=SDL_IMAGE_LIBRARY-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

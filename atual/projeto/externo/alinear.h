@@ -1,5 +1,5 @@
 #pragma once
-#include "math.h"
+#include <cmath>
 
 // (1) - Definindo as classes e construtores.
 
@@ -113,15 +113,23 @@ Cor prodICor(Intensidade i1, Cor c1);
 Vetor prodVM(Vetor v, Matriz m);
 Vetor prodMV(Matriz m, Vetor v);
 Ponto prodMP(Matriz m, Ponto p);
-Matriz subM(Matriz m1, Matriz m2); // TODO: Alguns não tão feitos ainda
-Matriz somaM(Matriz m1, Matriz m2);
-Matriz prodCL(Vetor vc, Vetor vl); // Produto de um vetor COLUNA por um vetor LINHA
 Matriz prodMM(Matriz m1, Matriz m2);
 
 // Declarando propriamente as matrizes
 
-Matriz mES(double sx, double xy, double sz);
+Matriz mE(double sx, double xy, double sz);
+Matriz mT(double tx, double ty, double tz);
 Matriz rX(double a);
 Matriz rY(double a);
 Matriz rZ(double a);
+Matriz Exz();
+Matriz Eyz();
+Matriz Exy();
+Matriz Cxy(double gama);
+Matriz Cyx(double gama);
+Matriz Czx(double gama);
+Matriz Cxz(double gama);
+Matriz Cyz(double gama);
+Matriz Czy(double gama);
+
 Matriz id();

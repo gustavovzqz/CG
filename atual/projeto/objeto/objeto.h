@@ -1,12 +1,15 @@
-#pragma once 
+#pragma once
 #include "../externo/alinear.h"
 #include "../externo/luz.h"
 #include "../ray/raio.h"
 
-class Objeto {
-    public: // Podemos adicionar coisas bases ao objeto posteriormente.
+class Objeto
+{
+public: // Podemos adicionar coisas bases ao objeto posteriormente.
     Intensidade Ka, Kd, Ke;
     float m;
-    virtual Cor intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado) = 0;
+    // Não recebe mais é ilumando, não recebe mais luz. Recebe somente CENÁRIO, com uma função nova chamada
+    // ilumnar objeto
+    virtual Intensidade intersecta(Raio r, Luz i) = 0;
     virtual double tInt(Raio r) = 0;
 };

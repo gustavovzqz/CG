@@ -90,7 +90,7 @@ CMakeFiles/main.dir/objetos/malha.cpp.o: \
  /usr/include/c++/11/bits/vector.tcc \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/../objeto/objeto.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/../objeto/../externo/alinear.h \
- /usr/include/c++/11/math.h /usr/include/c++/11/cmath /usr/include/math.h \
+ /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \

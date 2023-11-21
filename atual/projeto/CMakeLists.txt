@@ -7,6 +7,7 @@ set(SOURCES
     externo/luz.cpp
     tela/canvas.cpp
     ray/raio.cpp
+    tela/textura.cpp
     objetos/cilindro.cpp
     objetos/esfera.cpp
     objetos/cone.cpp
@@ -27,7 +28,11 @@ target_compile_features(main PRIVATE cxx_std_20) # para definir o padrão C++ pa
 
 # Encontre a biblioteca SDL2
 find_package(SDL2 REQUIRED)
-
-# Inclua as bibliotecas SDL2
 target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIRS})
 target_link_libraries(main PRIVATE ${SDL2_LIBRARIES})
+
+# Inclua a biblioteca SDL_image manualmente
+set(SDL_IMAGE_INCLUDE_DIRS /usr/include/SDL2)  # ou ajuste o caminho conforme necessário
+set(SDL_IMAGE_LIBRARIES /usr/lib/x86_64-linux-gnu/libSDL2_image.so)  # ou ajuste o caminho conforme necessário
+target_include_directories(main PRIVATE ${SDL_IMAGE_INCLUDE_DIRS})
+target_link_libraries(main PRIVATE ${SDL_IMAGE_LIBRARIES})

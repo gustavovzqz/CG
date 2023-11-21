@@ -1,6 +1,5 @@
 #include "cilindro.h"
 #include <cmath>
-#include <iostream>
 
 Cilindro::Cilindro() {}
 
@@ -68,7 +67,7 @@ Vetor Cilindro::normalCorpo(Raio r, double tint)
     return n;
 }
 
-Cor Cilindro::intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado)
+Intensidade Cilindro::intersecta(Raio r, Luz i)
 {
     Ponto p0 = r.pin;
     Vetor dr = r.dr;
@@ -98,11 +97,9 @@ Cor Cilindro::intersecta(Raio r, Luz i, Cor bgColor, bool ehiluminado)
         n = normalCorpo(r, c);
     }
 
-    if (tint < 0 || tint == INFINITY)
-        return bgColor;
-
     pint = addPV(p0, prodVetorC(dr, tint));
-    return (i.iluminarObjeto(n, pint, dr, Ke, Kd, Ka, m, ehiluminado));
+
+    return (i.iluminarObjeto(n, pint, dr, Ke, Kd, m));
 }
 
 double Cilindro::intersecta_corpo(Raio r)
