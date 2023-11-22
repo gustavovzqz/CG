@@ -19,6 +19,18 @@ double Plano::tInt(Raio r)
     Vetor dr = r.dr, w = subP(p0, p_pi);
     return (-(innerProd(n_bar, w) / innerProd(n_bar, dr)));
 }
+void Plano::escalar(double r1, double r2, double r3)
+{
+    (void)r1;
+    (void)r2;
+    (void)r3;
+}
+
+void Plano::appMatrix(Matriz m)
+{
+    p_pi = prodMP(m, p_pi);
+    n_bar = prodMV(m, n_bar);
+}
 
 Intensidade Plano::intersecta(Raio r, Luz i)
 {

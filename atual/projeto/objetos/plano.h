@@ -8,6 +8,8 @@ public:
     Vetor n_bar;
     Plano();
     Plano(Ponto p_pi, Vetor n_bar, Intensidade Ke, Intensidade Ka, Intensidade Kd, float m);
-    Intensidade intersecta(Raio r, Luz i) override;
+    Intensidade intersecta(Raio r, Luz i);
+    void appMatrix(Matriz m);
+    void escalar(double, double, double);
     double tInt(Raio r);
 };

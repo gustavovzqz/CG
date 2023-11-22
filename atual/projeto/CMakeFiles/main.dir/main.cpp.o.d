@@ -287,12 +287,11 @@ CMakeFiles/main.dir/main.cpp.o: \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/tela/janela.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/renderizar.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/../cenario/cenario.h \
+ /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/../cenario/../tela/camera.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc \
- /home/gustavofvv/Faculdade/S4/CG/atual/projeto/externo/../tela/camera.h \
- /usr/include/SDL2/SDL.h \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/SDL2/SDL.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/plano.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/malha.h \
  /home/gustavofvv/Faculdade/S4/CG/atual/projeto/objetos/teste.h

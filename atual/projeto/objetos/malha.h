@@ -11,7 +11,9 @@ public:
     Malha(Intensidade Ke, Intensidade Ka, Intensidade Kd, float m);
     void initFace(Face *f);
     void initNormais();
+    void escalar(double, double, double);
     Numero_vetor tIntaux(Raio r);
+    void appMatrix(Matriz m);
     double tInt(Raio r);
-    Intensidade intersecta(Raio r, Luz i) override;
+    Intensidade intersecta(Raio r, Luz i);
 };

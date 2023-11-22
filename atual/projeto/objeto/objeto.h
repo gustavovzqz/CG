@@ -12,4 +12,6 @@ public: // Podemos adicionar coisas bases ao objeto posteriormente.
     // ilumnar objeto
     virtual Intensidade intersecta(Raio r, Luz i) = 0;
     virtual double tInt(Raio r) = 0;
+    virtual void escalar(double r1, double r2, double r3) = 0;
+    virtual void appMatrix(Matriz m) = 0;
 };

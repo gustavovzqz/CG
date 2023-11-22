@@ -36,6 +36,18 @@ double Esfera::tInt(Raio r)
     return -1;
 }
 
+void Esfera::escalar(double e, double e2, double e3)
+{
+    (void)e2;
+    (void)e3;
+    raio *= e;
+}
+
+void Esfera::appMatrix(Matriz m)
+{
+    centro = prodMP(m, centro);
+}
+
 Intensidade Esfera::intersecta(Raio r, Luz i)
 {
     Ponto p0 = r.pin, pint;

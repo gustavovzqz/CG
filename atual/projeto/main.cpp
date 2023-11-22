@@ -74,8 +74,8 @@ int main()
     cenario.cena.push_back(&ci);
     cenario.cena.push_back(&con);
     cenario.luzes.push_back(&luz3);
-    // cenario.luzes.push_back(&luz);
-    //  cenario.luzes.push_back(&luz1);
+    cenario.luzes.push_back(&luz);
+    cenario.luzes.push_back(&luz1);
 
     // ------ Comandos SDL para inicializar a tela -------------
 
@@ -121,6 +121,16 @@ int main()
             if (event.type == SDL_QUIT)
             {
                 isRunning = false;
+            }
+            else if (event.type == SDL_MOUSEBUTTONDOWN)
+            {
+                // Verificar se o evento é um clique do botão esquerdo do mouse
+                if (event.button.button == SDL_BUTTON_LEFT)
+                {
+                    int x = event.button.x;
+                    int y = event.button.y;
+                    cenario.pick(&cam, J, dJanela, y, x);
+                }
             }
             // Se o evento for de clique...
         }

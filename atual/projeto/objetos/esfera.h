@@ -9,6 +9,8 @@ public:
     Cor cor;
     Esfera();
     Esfera(Ponto centro, float raio, Intensidade Ke, Intensidade Ka, Intensidade Kd, float m);
-    Intensidade intersecta(Raio r, Luz i) override;
+    void escalar(double, double, double);
+    void appMatrix(Matriz m);
+    Intensidade intersecta(Raio r, Luz i);
     double tInt(Raio r);
 };

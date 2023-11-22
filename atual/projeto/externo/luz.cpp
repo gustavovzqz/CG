@@ -96,7 +96,7 @@ Intensidade Luz::iluminarPontual(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, 
     return somaI(dif, esp);
 }
 
-Intensidade Luz::iluminarDirecional(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Intensidade Kd, float m)
+Intensidade Luz::iluminarDirecional(Vetor n, Vetor dr, Intensidade Ke, Intensidade Kd, float m)
 {
     // Precisamos testar antes se intersecta com o objeto ou não.
 
@@ -108,7 +108,7 @@ Intensidade Luz::iluminarDirecional(Vetor n, Ponto pint, Vetor dr, Intensidade K
     double fesp = 0;
     if (innerProd(r, v) > 0)
         fesp = pow((innerProd(r, v)), m);
-    if (fesp > 0)
+    if (fesp >= 0)
         esp = prodIntC(arroba(iF, Ke), fesp);
     // std::cout << fesp << std::endl;
 
@@ -130,7 +130,7 @@ Intensidade Luz::iluminarObjeto(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, I
     if (ehSpot)
         return iluminarSpot(n, pint, dr, Ke, Kd, m);
     if (ehDirecional)
-        return iluminarDirecional(n, pint, dr, Ke, Kd, m);
+        return iluminarDirecional(n, dr, Ke, Kd, m);
 
     return Intensidade(0, 0, 0);
 }

@@ -66,6 +66,24 @@ double Cone::tInt(Raio r)
     return tint;
 }
 
+void Cone::escalar(double r1, double r2, double r3)
+{
+    (void)r2;
+    (void)r3;
+    rb *= r1;
+    h *= r1;
+    h *= r1;
+    v = addPV(cb, prodVetorC(dc, h));
+}
+
+void Cone::appMatrix(Matriz m)
+{
+    cb = prodMP(m, cb);
+    v = prodMP(m, cb);
+    dc = normalizar(subP(v, cb));
+    h = modulo(subP(v, cb));
+}
+
 Intensidade Cone::intersecta(Raio r, Luz i)
 {
     double t1 = intersecta_base(r);

@@ -101,6 +101,20 @@ Numero_vetor Malha::tIntaux(Raio r)
     return Numero_vetor(-1, Vetor(-1, -1, -1));
 }
 
+void Malha::appMatrix(Matriz m)
+{
+
+    for (Vertice *v : vertices)
+        v->p = prodMP(m, v->p);
+
+    initNormais();
+}
+
+void Malha::escalar(double r1, double r2, double r3)
+{
+    Matriz escala = mE(r1, r2, r3);
+    appMatrix(escala);
+}
 double Malha::tInt(Raio r)
 {
     Numero_vetor aux = tIntaux(r);

@@ -163,6 +163,22 @@ double Cilindro::intersecta_base(Raio r)
     return -1;
 }
 
+void Cilindro::escalar(double r1, double r2, double r3)
+{
+    (void)r2;
+    (void)r3;
+    rc *= r1;
+    h *= r1;
+    ct = addPV(cb, prodVetorC(dc, h));
+}
+
+void Cilindro::appMatrix(Matriz m)
+{
+    cb = prodMP(m, cb);
+    ct = prodMP(m, ct);
+    dc = prodMV(m, dc);
+}
+
 double Cilindro::intersecta_tampa(Raio r)
 {
     Vetor n = dc, w = subP(r.pin, ct), auxiliar;

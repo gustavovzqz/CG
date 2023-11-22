@@ -1,5 +1,7 @@
 #include "cenario.h"
+#include <iostream>
 #include <cmath>
+using namespace std;
 
 Cenario::Cenario() {}
 
@@ -11,7 +13,7 @@ Cenario::Cenario(Intensidade newI)
 Objeto *Cenario::escolherObjeto(Raio r)
 {
     double min, t;
-    int indice = 0;
+    int indice = -1;
     min = INFINITY;
     for (std::vector<Objeto *>::size_type i = 0; i < cena.size(); i++)
     {
@@ -22,6 +24,8 @@ Objeto *Cenario::escolherObjeto(Raio r)
             indice = i;
         }
     }
+    if (indice == -1)
+        return nullptr;
     return cena[indice];
 }
 /* Não vai ter mais isso, vai ser uma função Iluminar Objeto, que simplesmente já itera sobre o objeto
@@ -99,3 +103,41 @@ Cor Cenario::iluminarObjeto(Raio raio, Ponto pint_objeto, Objeto *obj, Cor bgCol
 
     return prodICor(intensity, Cor(255, 255, 255));
 }
+
+void Cenario::pick(Camera *cam, Janela janela, int dJanela, int l, int c)
+{
+    Ponto obs = cam->obs;
+    float JyM = janela.jyMax;
+    float jxMin = janela.jxMin;
+    float dy = janela.dY;
+    float dx = janela.dX;
+    Raio raio;
+    float yL;
+    float xC;
+    Ponto pJ;
+    Objeto *obj;
+
+    yL = JyM - dy / 2 - l * dy;
+    xC = jxMin + dx / 2 + c * dx;
+    pJ = Ponto(xC, yL, -dJanela);
+    pJ = prodMP(cam->mc, pJ);
+    raio = Raio(obs, pJ);
+    // Arrumar depois para se não tiver objeto
+    obj = escolherObjeto(raio);
+    if (obj == nullptr)
+    {
+        cout << "Nenhum objeto foi selecionado.\n";
+        return;
+    }
+    alterarObjeto(obj);
+    // Se for um nullptr a gente não faz nada, dá um aviso. Apartir daqui a gente trata:
+    // Funão fazer alguma coisa com o objeto
+}
+
+void Cenario::alterarObjeto(Objeto *obj)
+{
+    int escolha;
+    cout << "Objeto selecionado!\n";
+    cout << "Menu de alteração:\n1 - Aplicar matriz\n2 - Alterar propriedades\n";
+    obj->appMatrix(rZ(3.14));
+};
