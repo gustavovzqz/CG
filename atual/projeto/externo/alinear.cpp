@@ -301,7 +301,7 @@ Matriz rY(double a)
     return Matriz(Vetor(cos(a), 0, -sin(a), 0),
                   Vetor(0, 1, 0, 0),
                   Vetor(sin(a), 0, cos(a), 0),
-                  Vetor(0, 0, 0, 0));
+                  Vetor(0, 0, 0, 1));
 }
 Matriz rZ(double a)
 {

@@ -3,7 +3,7 @@
 // Retorna uma matriz colorida!
 void colorirMatriz(Camera cam, Janela janela, Canvas *canvas, Cenario cenario, int dJanela)
 {
-    Ponto obs = cam.obs;
+    Ponto obs = Ponto(0, 0, 0);
     float JyM = janela.jyMax;
     float jxMin = janela.jxMin;
     float dy = janela.dY;
@@ -24,7 +24,6 @@ void colorirMatriz(Camera cam, Janela janela, Canvas *canvas, Cenario cenario, i
         {
             xC = jxMin + dx / 2 + c * dx;
             pJ = Ponto(xC, yL, -dJanela);
-            pJ = prodMP(cam.mc, pJ);
             raio = Raio(obs, pJ);
             obj = cenario.escolherObjeto(raio);
             if (obj == nullptr)

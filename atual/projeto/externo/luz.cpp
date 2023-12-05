@@ -69,6 +69,18 @@ Intensidade Luz::iluminarSpot(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Int
     return somaI(dif, esp);
 }
 
+void Luz::appMatrix(Matriz m)
+{
+    if (ehDirecional || ehSpot)
+    {
+        ds = prodMV(m, ds);
+    }
+    if (ehSpot || ehPontual)
+    {
+        pF = prodMP(m, pF);
+    }
+}
+
 Intensidade Luz::iluminarPontual(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Intensidade Kd, float m)
 {
     // Precisamos testar antes se intersecta com o objeto ou não.

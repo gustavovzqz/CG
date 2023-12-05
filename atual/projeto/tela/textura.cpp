@@ -32,11 +32,8 @@ Textura::Textura(const string path)
     std::cout << "foi! Image dimensions: " << image->w << " x " << image->h << '\n';
 }
 
-Intensidade Textura::getIntensity(Ponto pint)
+Intensidade Textura::getIntensity(int x, int y)
 { // Esse cálculo está errado, e tem que ser um para cada objeto.
-    int x, y;
-    // Como definir quem é o x e o y?
-
     Cor p = getColor(x, y);
     return (Intensidade((double)p.r / 255, (double)p.g / 255, (double)p.b / 255));
 }

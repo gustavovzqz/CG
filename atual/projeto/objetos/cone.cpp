@@ -79,7 +79,7 @@ void Cone::escalar(double r1, double r2, double r3)
 void Cone::appMatrix(Matriz m)
 {
     cb = prodMP(m, cb);
-    v = prodMP(m, cb);
+    v = prodMP(m, v);
     dc = normalizar(subP(v, cb));
     h = modulo(subP(v, cb));
 }

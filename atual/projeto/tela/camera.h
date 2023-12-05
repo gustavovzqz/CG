@@ -4,7 +4,6 @@
 class Camera
 {
 public:
-    Ponto obs;
     Matriz mc;
     Camera();
     Camera(Ponto e, Ponto up, Ponto at);

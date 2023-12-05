@@ -176,7 +176,9 @@ void Cilindro::appMatrix(Matriz m)
 {
     cb = prodMP(m, cb);
     ct = prodMP(m, ct);
-    dc = prodMV(m, dc);
+    Vetor altura = subP(ct, cb);
+    h = modulo(altura);
+    dc = normalizar(altura);
 }
 
 double Cilindro::intersecta_tampa(Raio r)

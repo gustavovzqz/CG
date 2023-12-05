@@ -28,6 +28,19 @@ Objeto *Cenario::escolherObjeto(Raio r)
         return nullptr;
     return cena[indice];
 }
+
+void Cenario::atualizarCenarioMC(Camera cam)
+{
+    for (Objeto *obj : cena)
+    {
+        obj->appMatrix(cam.mc);
+    }
+
+    for (Luz *luz : luzes)
+    {
+        luz->appMatrix(cam.mc);
+    }
+}
 /* Não vai ter mais isso, vai ser uma função Iluminar Objeto, que simplesmente já itera sobre o objeto
 e colore ele corretamente*/
 bool Cenario::ehIluminado(Luz l, Ponto pint_objeto, Objeto *obj)
@@ -106,7 +119,7 @@ Cor Cenario::iluminarObjeto(Raio raio, Ponto pint_objeto, Objeto *obj, Cor bgCol
 
 void Cenario::pick(Camera *cam, Janela janela, int dJanela, int l, int c)
 {
-    Ponto obs = cam->obs;
+    Ponto obs{0, 0, 0};
     float JyM = janela.jyMax;
     float jxMin = janela.jxMin;
     float dy = janela.dY;
@@ -120,7 +133,6 @@ void Cenario::pick(Camera *cam, Janela janela, int dJanela, int l, int c)
     yL = JyM - dy / 2 - l * dy;
     xC = jxMin + dx / 2 + c * dx;
     pJ = Ponto(xC, yL, -dJanela);
-    pJ = prodMP(cam->mc, pJ);
     raio = Raio(obs, pJ);
     // Arrumar depois para se não tiver objeto
     obj = escolherObjeto(raio);
@@ -139,5 +151,5 @@ void Cenario::alterarObjeto(Objeto *obj)
     int escolha;
     cout << "Objeto selecionado!\n";
     cout << "Menu de alteração:\n1 - Aplicar matriz\n2 - Alterar propriedades\n";
-    obj->appMatrix(rZ(3.14));
+    obj->appMatrix(Cxy(tan(35)));
 };

@@ -9,7 +9,7 @@ public:
     SDL_Surface *image = nullptr;
     int h, w;
     void loadImage(std::string path);
-    Intensidade getIntensity(Ponto pint);
+    Intensidade getIntensity(int x, int y);
     Cor getColor(int x, int y);
     Textura(std::string path);
     Textura();
