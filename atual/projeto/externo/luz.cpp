@@ -41,6 +41,11 @@ Luz::Luz(Ponto pF, Intensidade iF, Vetor ds, double alfa)
     ehDirecional = false;
 }
 
+void Luz::alterariF(Intensidade iF)
+{
+    this->iF = iF;
+}
+
 Intensidade Luz::iluminarSpot(Vetor n, Ponto pint, Vetor dr, Intensidade Ke, Intensidade Kd, float m)
 {
     // Precisamos testar antes se intersecta com o objeto ou não.

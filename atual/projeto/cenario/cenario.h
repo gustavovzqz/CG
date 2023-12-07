@@ -16,8 +16,10 @@ public:
     Cenario();
     Cenario(Intensidade iAmb);
     Cor iluminarObjeto(Raio r, Ponto pint_objeto, Objeto *obj, Cor bgColor);
-    void pick(Camera *cam, Janela janela, int djanela, int x, int y);
+    void pick(Janela janela, int djanela, int x, int y);
+    void alterarCenario(Camera *cam, Janela janela, int &djanela);
     void atualizarCenarioMC(Camera cam);
+    void atualizarCenarioCM(Camera cam);
 
 private:
     void alterarObjeto(Objeto *obj);

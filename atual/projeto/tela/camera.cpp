@@ -13,6 +13,7 @@ Camera::Camera(Ponto e, Ponto up, Ponto at)
                       Vetor{i.y, j.y, k.y, 0},
                       Vetor{i.z, j.z, k.z, 0},
                       Vetor{-innerProd(i, ev), -innerProd(j, ev), -innerProd(k, ev), 1}};
+    this->cm = Matriz(i, j, k, ev);
 }
 
 void Camera::atualizar(Ponto e, Ponto up, Ponto at)
@@ -26,4 +27,5 @@ void Camera::atualizar(Ponto e, Ponto up, Ponto at)
                       Vetor{i.y, j.y, k.y, 0},
                       Vetor{i.z, j.z, k.z, 0},
                       Vetor{-innerProd(i, ev), -innerProd(j, ev), -innerProd(k, ev), 1}};
+    this->cm = Matriz(i, j, k, ev);
 }

@@ -28,8 +28,6 @@ Textura::Textura(const string path)
     this->image = image;
     this->h = image->h;
     this->w = image->w;
-
-    std::cout << "foi! Image dimensions: " << image->w << " x " << image->h << '\n';
 }
 
 Intensidade Textura::getIntensity(int x, int y)

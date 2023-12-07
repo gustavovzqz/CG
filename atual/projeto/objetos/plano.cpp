@@ -25,7 +25,6 @@ Plano::Plano(const std::string path, Ponto p_pi, Vetor n_bar, float m)
     this->p_pi = p_pi;
     this->n_bar = n_bar;
     this->m = m;
-    std::cout << "Construiu!\n";
 }
 
 double Plano::tInt(Raio r)
@@ -69,22 +68,21 @@ Intensidade Plano::intersecta(Raio r, Luz i)
         {
             double a = (sqrt(pow(normal.x, 2) + pow(normal.z, 2)));
             double alpha = -asin(normal.x / a);
-            Vetor normalWithYRotatedY = prodMV(rY(alpha), normal);
+            Vetor normalWithYRotated = prodMV(rY(alpha), normal);
             Vetor aux = prodMV(rY(alpha), piMinusPPI);
-            piMinusPPI = prodMV(rX(-acos(normalWithYRotatedY.y)), aux);
+            piMinusPPI = prodMV(rX(-acos(normalWithYRotated.y)), aux);
         }
 
         int x = piMinusPPI.x;
         int z = piMinusPPI.z;
         int image_w = text->w;
         int image_h = text->h;
-        int imageX;
-        int imageY;
-        if (x == 0)
-            imageX = 0;
-        if (z == 0)
-            imageY = 0;
+        int imageX = 0;
+        int imageY = 0;
 
+        /* Enteder melhor a lógica do que estamos fazendo:
+            1) Como lidar com repetição de fragmentos
+            2) Onde vai ficar o p_pi, faz diferença?*/
         if (x < 0)
         {
             imageX = image_w - (abs(x) % image_w);
@@ -100,7 +98,7 @@ Intensidade Plano::intersecta(Raio r, Luz i)
         }
         else if (z > 0)
         {
-            imageX = abs(z) % image_h;
+            imageY = abs(z) % image_h;
         }
 
         Intensidade nova = text->getIntensity(imageX, imageY);

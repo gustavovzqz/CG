@@ -1,7 +1,7 @@
 #include "renderizar.h"
 
 // Retorna uma matriz colorida!
-void colorirMatriz(Camera cam, Janela janela, Canvas *canvas, Cenario cenario, int dJanela)
+void colorirMatriz(Janela janela, Canvas *canvas, Cenario cenario, int dJanela)
 {
     Ponto obs = Ponto(0, 0, 0);
     float JyM = janela.jyMax;
@@ -24,7 +24,9 @@ void colorirMatriz(Camera cam, Janela janela, Canvas *canvas, Cenario cenario, i
         {
             xC = jxMin + dx / 2 + c * dx;
             pJ = Ponto(xC, yL, -dJanela);
-            raio = Raio(obs, pJ);
+
+            raio = Raio(obs, pJ); // Perspectiva, o raio sai do vetor (obs, pj)
+
             obj = cenario.escolherObjeto(raio);
             if (obj == nullptr)
             {

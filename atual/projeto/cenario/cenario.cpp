@@ -41,6 +41,19 @@ void Cenario::atualizarCenarioMC(Camera cam)
         luz->appMatrix(cam.mc);
     }
 }
+
+void Cenario::atualizarCenarioCM(Camera cam)
+{
+    for (Objeto *obj : cena)
+    {
+        obj->appMatrix(cam.cm);
+    }
+
+    for (Luz *luz : luzes)
+    {
+        luz->appMatrix(cam.cm);
+    }
+}
 /* Não vai ter mais isso, vai ser uma função Iluminar Objeto, que simplesmente já itera sobre o objeto
 e colore ele corretamente*/
 bool Cenario::ehIluminado(Luz l, Ponto pint_objeto, Objeto *obj)
@@ -94,6 +107,8 @@ Cor Cenario::iluminarObjeto(Raio raio, Ponto pint_objeto, Objeto *obj, Cor bgCol
     if (obj->tInt(raio) <= 0)
         return bgColor;
 
+    Intensidade Ka;
+
     Intensidade intensity{0., 0., 0.};
     for (std::vector<Objeto *>::size_type i = 0; i < luzes.size(); ++i)
     {
@@ -103,7 +118,9 @@ Cor Cenario::iluminarObjeto(Raio raio, Ponto pint_objeto, Objeto *obj, Cor bgCol
             intensity = somaI(obj->intersecta(raio, l), intensity);
         }
     }
-    intensity = somaI(arroba(obj->Ka, iAmb), intensity);
+    obj->intersecta(raio, *luzes[0]);
+    Ka = obj->Ka;
+    intensity = somaI(arroba(Ka, iAmb), intensity);
 
     if (intensity.r > 1)
         intensity.r = 1;
@@ -117,7 +134,7 @@ Cor Cenario::iluminarObjeto(Raio raio, Ponto pint_objeto, Objeto *obj, Cor bgCol
     return prodICor(intensity, Cor(255, 255, 255));
 }
 
-void Cenario::pick(Camera *cam, Janela janela, int dJanela, int l, int c)
+void Cenario::pick(Janela janela, int dJanela, int l, int c)
 {
     Ponto obs{0, 0, 0};
     float JyM = janela.jyMax;
@@ -146,10 +163,77 @@ void Cenario::pick(Camera *cam, Janela janela, int dJanela, int l, int c)
     // Funão fazer alguma coisa com o objeto
 }
 
+Ponto receberPonto()
+{
+    double x, y, z;
+    cout << "Insira o X: ";
+    cin >> x;
+    cout << "Insira o Y: ";
+    cin >> y;
+    cout << "Insira o Z: ";
+    cin >> z;
+    return Ponto(x, y, z);
+}
+
+Intensidade receberIntensidade()
+{
+    double r, g, b;
+    cout << "r: ";
+    cin >> r;
+    cout << "g: ";
+    cin >> g;
+    cout << "b: ";
+    cin >> b;
+    return Intensidade(r, g, b);
+}
+
+void Cenario::alterarCenario(Camera *cam, Janela janela, int &djanela)
+{
+    int escolha;
+    cout << "O que deseja alterar no cenário?\n";
+    cout << "1 - Alterar câmera\n2 - Alterar luzes\n";
+    cin >> escolha;
+    if (escolha == 1)
+    {
+        cout << "1- Mudar o ponto de vista\n2- Alterar distância focal\n";
+        cin >> escolha;
+        if (escolha == 1)
+        {
+            cout << "Insira o eye point:\n";
+            Ponto e = receberPonto();
+            cout << "Insira o view up:\n";
+            Ponto vup = receberPonto();
+            cout << "Insira o look at:\n";
+            Ponto lookat = receberPonto();
+            atualizarCenarioCM(*cam);
+            cam->atualizar(e, vup, lookat);
+            atualizarCenarioMC(*cam);
+        }
+        else if (escolha == 2)
+        {
+            cout << "Insira a nova distância focal: ";
+            cin >> djanela;
+        }
+    }
+    else if (escolha == 2)
+    {
+        int indice = 0;
+        cout << "Escolha o índice da luz a ser alterada: ";
+        cout << "\n0- Luz na lâmpada\n1- Luz spot\n2- Luz pontual lâmpada\n3- Luz ambiente\n: ";
+        cin >> indice;
+        cout << "Escolha os novos parâmetros para a luz:\n";
+
+        Intensidade k = receberIntensidade();
+        if (indice == 3)
+            iAmb = k;
+        else
+            luzes[indice]->alterariF(k);
+    }
+}
+
 void Cenario::alterarObjeto(Objeto *obj)
 {
     int escolha;
     cout << "Objeto selecionado!\n";
     cout << "Menu de alteração:\n1 - Aplicar matriz\n2 - Alterar propriedades\n";
-    obj->appMatrix(Cxy(tan(35)));
 };
