@@ -165,7 +165,7 @@ double Cone::intersecta_corpo(Raio r)
     else
         x = t1;
 
-    if (x > 0)
+    if (x >= 0)
     {
         pi = addPV(p0, prodVetorC(dr, x));
         aux = innerProd(subP(v, pi), dc);

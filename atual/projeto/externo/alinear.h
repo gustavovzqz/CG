@@ -131,5 +131,6 @@ Matriz Czx(double gama);
 Matriz Cxz(double gama);
 Matriz Cyz(double gama);
 Matriz Czy(double gama);
+Matriz Raxis(double x, double y, double z, double w);
 
 Matriz id();

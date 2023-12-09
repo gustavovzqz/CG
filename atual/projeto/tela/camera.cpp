@@ -5,7 +5,11 @@ Camera::Camera() {}
 Camera::Camera(Ponto e, Ponto up, Ponto at)
 {
     Vetor i, j, k, ev;
+    this->e = e;
+    this->up = up;
+    this->at = at;
     k = normalizar(subP(e, at));
+    this->e_at = k;
     i = normalizar(vetorial(subP(up, e), k));
     j = vetorial(k, i);
     ev = Vetor(e.x, e.y, e.z, 1);
@@ -19,7 +23,11 @@ Camera::Camera(Ponto e, Ponto up, Ponto at)
 void Camera::atualizar(Ponto e, Ponto up, Ponto at)
 {
     Vetor i, j, k, ev;
+    this->e = e;
+    this->up = up;
+    this->at = at;
     k = normalizar(subP(e, at));
+    this->e_at = k;
     i = normalizar(vetorial(subP(up, e), k));
     j = vetorial(k, i);
     ev = Vetor(e.x, e.y, e.z, 1);

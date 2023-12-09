@@ -13,7 +13,7 @@ set(SOURCES
     objetos/cone.cpp
     objetos/plano.cpp
     objetos/malha.cpp
-    objetos/teste.cpp
+    objetos/cubo.cpp
     cenario/cenario.cpp
     tela/janela.cpp
     tela/camera.cpp
@@ -25,11 +25,12 @@ set(SOURCES
 add_executable(main ${SOURCES})
 target_compile_options(main PRIVATE -Wall -Wextra -pedantic)
 target_compile_features(main PRIVATE cxx_std_20) # para definir o padrão C++ para C++20
-
 # Encontre a biblioteca SDL2
 find_package(SDL2 REQUIRED)
 target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIRS})
 target_link_libraries(main PRIVATE ${SDL2_LIBRARIES})
+
+
 
 # Inclua a biblioteca SDL_image manualmente
 set(SDL_IMAGE_INCLUDE_DIRS /usr/include/SDL2)  # ou ajuste o caminho conforme necessário

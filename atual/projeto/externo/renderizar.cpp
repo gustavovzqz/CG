@@ -16,7 +16,6 @@ void colorirMatriz(Janela janela, Canvas *canvas, Cenario cenario, int dJanela)
     float xC;
     Ponto pJ;
     Objeto *obj;
-
     for (int l = 0; l < nLin; l++)
     {
         yL = JyM - dy / 2 - l * dy;
@@ -51,6 +50,7 @@ void renderizar(SDL_Renderer *renderer, Canvas canvas)
     int nCol = canvas.nCol;
 
     SDL_RenderClear(renderer);
+
     for (int l = 0; l < nLin; l++)
     {
         for (int c = 0; c < nCol; c++)
