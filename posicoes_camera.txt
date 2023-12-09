@@ -1,0 +1,26 @@
+CENÁRIO VISTO DE CIMA:
+Camera cam = Camera(Ponto(600, 799, 600), Ponto(601, 799, 600), Ponto(600, 180, 600));
+
+VISÃO FRONTAL CADEIRA
+Camera cam = Camera(Ponto(600, 300, 100), Ponto(600, 301, 100), Ponto(600, 300, 101));
+
+VISÃO DE CIMA, OLHANDO PARA A LUMINÁRIA
+Camera cam = Camera(Ponto(600, 600, 300), Ponto(600, 601, 300), Ponto(600, 600, 301));
+
+VISÃO LATERAL DA CADEIRA
+cam = Camera(Ponto(100, 300, 600), Ponto(100, 301, 600), Ponto(101, 300, 600));
+
+VISÃO TRASEIRA DA CADEIRA 
+Camera cam = Camera(Ponto(600, 300, 1100), Ponto(600, 301, 1100), Ponto(600, 300, 1099));
+
+VISÃO DA CÂMERA 
+cam = Camera(Ponto(600, 280, 286), Ponto(600, 281, 286), Ponto(600, 280, 287));
+
+
+VISÃO 2 PONTOS DE FUGA
+cam = Camera(Ponto(1, 300, 1), Ponto(1, 301, 1), Ponto(2, 300, 2));
+cam = Camera(Ponto(400, 170, 400), Ponto(400, 171, 400), Ponto(401, 170, 401));
+
+VISÃO TRẼS PONTOS DE FUGA
+cam = Camera(Ponto(430, 190, 430), Ponto(431, 191, 431), Ponto(431, 189, 431));
+
