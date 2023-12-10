@@ -385,9 +385,14 @@ Matriz Cyz(double gama)
 
 // Quaternions ou o outro.
 
-Matriz Raxis(double x, double y, double z, double w)
+Matriz Raxis(double x, double y, double z, double ang)
 {
-    w = w / 2; // O ângulo nos cálculos deve ser equivalente a metade.
+
+    double seno = sin(ang / 2);
+    double w = cos(ang / 2); // O ângulo nos cálculos deve ser equivalente a metade.
+    x = seno * x;
+    y = seno * y;
+    z = seno * z;
     double w2 = w * w;
     double x2 = x * x;
     double y2 = y * y;

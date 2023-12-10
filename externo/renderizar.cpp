@@ -27,9 +27,9 @@ void colorirMatriz(Camera &cam, Janela janela, Canvas *canvas, Cenario cenario, 
             if (opt == 1)
                 raio = Raio(obs, pJ); // Perspectiva, o raio sai do vetor (obs, pj)
             else if (opt == 2)
-                raio = Raio(pJ, cam.orto);
+                raio = Raio(pJ, cam.orto); // Ortográfica
             else if (opt == 3)
-                raio = Raio(pJ, cam.obq);
+                raio = Raio(pJ, cam.obq); // Oblíqua
             obj = cenario.escolherObjeto(raio);
             if (obj == nullptr)
             {

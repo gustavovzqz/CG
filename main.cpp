@@ -21,23 +21,17 @@ int main()
     int dJanela = 30;
     int wJanela = 60;
     int hJanela = 60;
-    int nCol = 100;
-    int nLin = 100;
+    int nCol = 500;
+    int nLin = 500;
 
-    // Posição inicial da câmera.
-    // Camera cam = Camera(Ponto(600, 300, 100), Ponto(600, 301, 100), Ponto(600, 300, 101));
-    // Camera cam = Camera(Ponto(600, 700, 600), Ponto(601, 700, 600), Ponto(600, 180, 600));
     Camera cam = Camera(Ponto(600, 280, 286), Ponto(600, 281, 286), Ponto(600, 280, 287));
 
-    // Camera cam = Camera(Ponto(600, 400, 1100), Ponto(600, 401, 1100), Ponto(600, 400, 1099));
-
+    Luz direcional = Luz(Intensidade(1, 1, 1), Vetor(0, -1, 0));
     Luz luz_na_lampada = Luz(Ponto(600, 670, 600), Intensidade(0.9, 0.9, 0.1), Vetor(0, 1, 0), 0.53);
     Luz luz_da_lampada = Luz(Ponto(600, 670, 600), Intensidade(0.5, 0.5, 0.1), Vetor(0, -1, 0), 0.35);
     Luz luz_pontual_lampada = Luz(Ponto(600, 620, 600), Intensidade(0.1, 0.1, 0.1));
     Luz spot_camera = Luz(Ponto(600, 265, 286), Intensidade(0.4, 0.4, 0.2), Vetor(0, 0, 1), 0.35);
 
-    // DEFINIÇÃO DOS PLANOS (PAREDE / CHÃO / TETO)
-    // Plano chao = Plano("assets/concreto.png", Ponto(0, 0, 0), Vetor(0, 1, 0), 1);
     Intensidade i_chao{0.4, 0.4, 0.4};
     Plano chao = Plano(Ponto(0, 0, 0), Vetor(0, 1, 0), i_chao, i_chao, i_chao, 3);
 
@@ -71,9 +65,6 @@ int main()
     Cubo base = Cubo(124, Ponto(600, 100, 600), k_cadeira, k_cadeira, k_cadeira, 1);
     base.appMatrix(mE(1, 0.1, 1));
     base.appMatrix(mT(0, 100, 0));
-    Cubo encosto = Cubo(124, Ponto(600, 160, 650), k_cadeira, k_cadeira, k_cadeira, 1);
-    encosto.appMatrix(mE(1, 1.3, 0.1));
-    encosto.appMatrix(mT(0, -95, 590));
 
     // Sdowbem na cadeira
     Intensidade sdow{1, 1, 1};
@@ -151,11 +142,11 @@ int main()
     cenario.cena.push_back(&galpao);
 
     cenario.cena.push_back(&base);
-    // cenario.cena.push_back(&encosto);
     cenario.luzes.push_back(&luz_na_lampada);
     cenario.luzes.push_back(&luz_da_lampada);
     cenario.luzes.push_back(&luz_pontual_lampada);
     cenario.luzes.push_back(&spot_camera);
+    cenario.luzes.push_back(&direcional);
 
     cenario.atualizarCenarioMC(cam);
     // Atualiza para coordenadas de câmera

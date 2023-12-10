@@ -43,5 +43,5 @@ void Camera::atualizar(Ponto e, Ponto up, Ponto at)
 void Camera::atualizarDS(Vetor ds)
 {
 
-    this->obq = prodMV(mc, ds);
+    this->obq = prodMV(mc, normalizar(ds));
 }

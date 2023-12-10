@@ -301,7 +301,7 @@ void Cenario::alterarCenario(Camera *cam, Janela *j, int &djanela, int &opt)
                 Vetor ds = receberVetor();
                 cam->atualizarDS(ds);
             }
-            num = opt;
+            opt = num;
         }
     }
     else if (escolha == 2)
@@ -380,7 +380,8 @@ void Cenario::alterarObjeto(Objeto *obj, Camera *cam)
                 cin >> y;
                 cin >> z;
                 atualizarCenarioCM(*cam);
-                obj->appMatrix(Raxis(x, y, z, angulo));
+                Vetor p = prodMV(cam->mc, normalizar(Vetor(x, y, z)));
+                obj->appMatrix(Raxis(p.x, p.y, p.z, angulo));
                 atualizarCenarioMC(*cam);
             }
         }
