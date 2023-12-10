@@ -134,7 +134,7 @@ Cor Cenario::iluminarObjeto(Raio raio, Ponto pint_objeto, Objeto *obj, Cor bgCol
     return prodICor(intensity, Cor(255, 255, 255));
 }
 
-void Cenario::pick(Camera *cam, Janela janela, int dJanela, int l, int c)
+void Cenario::pick(Camera *cam, Janela janela, int dJanela, int l, int c, int &opt)
 {
     Ponto obs{0, 0, 0};
     float JyM = janela.jyMax;
@@ -150,7 +150,14 @@ void Cenario::pick(Camera *cam, Janela janela, int dJanela, int l, int c)
     yL = JyM - dy / 2 - l * dy;
     xC = jxMin + dx / 2 + c * dx;
     pJ = Ponto(xC, yL, -dJanela);
-    raio = Raio(obs, pJ);
+
+    if (opt == 1)
+        raio = Raio(obs, pJ); // Perspectiva, o raio sai do vetor (obs, pj)
+    else if (opt == 2)
+        raio = Raio(pJ, cam->orto);
+    else if (opt == 3)
+        raio = Raio(pJ, cam->obq);
+
     // Arrumar depois para se não tiver objeto
     obj = escolherObjeto(raio);
     if (obj == nullptr)
@@ -175,6 +182,18 @@ Ponto receberPonto()
     return Ponto(x, y, z);
 }
 
+Vetor receberVetor()
+{
+    double x, y, z;
+    cout << "Insira o X: ";
+    cin >> x;
+    cout << "Insira o Y: ";
+    cin >> y;
+    cout << "Insira o Z: ";
+    cin >> z;
+    return Vetor(x, y, z);
+}
+
 Intensidade receberIntensidade()
 {
     double r, g, b;
@@ -187,7 +206,7 @@ Intensidade receberIntensidade()
     return Intensidade(r, g, b);
 }
 
-void Cenario::alterarCenario(Camera *cam, int &djanela)
+void Cenario::alterarCenario(Camera *cam, Janela *j, int &djanela, int &opt)
 {
     int escolha;
     cout << "O que deseja alterar no cenário?\n";
@@ -195,7 +214,7 @@ void Cenario::alterarCenario(Camera *cam, int &djanela)
     cin >> escolha;
     if (escolha == 1)
     {
-        cout << "1- Mudar o ponto de vista\n2- Alterar distância focal\n3- Pontos salvos\n";
+        cout << "1- Mudar o ponto de vista\n2- Alterar distância focal\n3- Pontos salvos\n4- Alterar janela\n5- Alterar Projeção\n";
         cin >> escolha;
         if (escolha == 1)
         {
@@ -260,6 +279,29 @@ void Cenario::alterarCenario(Camera *cam, int &djanela)
             atualizarCenarioCM(*cam);
             cam->atualizar(e, vup, lookat);
             atualizarCenarioMC(*cam);
+        }
+        else if (escolha == 4)
+        {
+            double hJanela, wJanela;
+            cout << "Escolha os novos atributos para a janela\n";
+            cout << "Novo hJanela: ";
+            cin >> hJanela;
+            cout << "Novo wJanela: ";
+            cin >> wJanela;
+            j->update(wJanela, hJanela);
+        }
+        else if (escolha == 5)
+        {
+            int num;
+            cout << "1- Perspectiva\n2- Ortográfica\n3- Oblíqua\n";
+            cin >> num;
+            if (num == 3)
+            {
+                cout << "Insira o vetor ds\n";
+                Vetor ds = receberVetor();
+                cam->atualizarDS(ds);
+            }
+            num = opt;
         }
     }
     else if (escolha == 2)
@@ -413,7 +455,7 @@ void Cenario::alterarObjeto(Objeto *obj, Camera *cam)
         else if (choice == 5)
         {
             double fx, fy, fz;
-            cout << "Insira o fator de translação em (x, y, z): ";
+            cout << "Insira o fator de translação em (x, y, z):\n";
             cin >> fx;
             cin >> fy;
             cin >> fz;

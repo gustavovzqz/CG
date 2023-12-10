@@ -4,6 +4,8 @@
 class Camera
 {
 public:
+    Vetor obq;
+    Vetor orto;
     Matriz mc;
     Matriz cm;
     Ponto e, up, at;
@@ -11,4 +13,5 @@ public:
     Camera();
     Camera(Ponto e, Ponto up, Ponto at);
     void atualizar(Ponto e, Ponto up, Ponto at);
+    void atualizarDS(Vetor ds);
 };

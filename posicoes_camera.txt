@@ -24,3 +24,4 @@ cam = Camera(Ponto(400, 170, 400), Ponto(400, 171, 400), Ponto(401, 170, 401));
 VISÃO TRẼS PONTOS DE FUGA
 cam = Camera(Ponto(430, 190, 430), Ponto(431, 191, 431), Ponto(431, 189, 431));
 
+

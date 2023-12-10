@@ -21,8 +21,8 @@ int main()
     int dJanela = 30;
     int wJanela = 60;
     int hJanela = 60;
-    int nCol = 500;
-    int nLin = 500;
+    int nCol = 100;
+    int nLin = 100;
 
     // Posição inicial da câmera.
     // Camera cam = Camera(Ponto(600, 300, 100), Ponto(600, 301, 100), Ponto(600, 300, 101));
@@ -117,7 +117,6 @@ int main()
     //
     Canvas c = Canvas(nLin, nCol, Cor(255, 255, 255));
     Janela J = Janela(wJanela, hJanela, c);
-    cam = Camera(Ponto(430, 190, 430), Ponto(431, 191, 431), Ponto(431, 189, 431));
     Cenario cenario{Intensidade(0.2, 0.2, 0.2)};
 
     cenario.cena.push_back(&fundo);
@@ -198,10 +197,11 @@ int main()
         SDL_Quit();
         return 1;
     }
+    int opt = 1;
     while (isRunning)
 
     {
-        colorirMatriz(J, &c, cenario, dJanela);
+        colorirMatriz(cam, J, &c, cenario, dJanela, opt);
         renderizar(renderer, c);
         SDL_RenderPresent(renderer);
         while (SDL_PollEvent(&event))
@@ -217,11 +217,11 @@ int main()
                 {
                     int x = event.button.x;
                     int y = event.button.y;
-                    cenario.pick(&cam, J, dJanela, y, x);
+                    cenario.pick(&cam, J, dJanela, y, x, opt);
                 }
                 else if (event.button.button == SDL_BUTTON_RIGHT)
                 {
-                    cenario.alterarCenario(&cam, dJanela);
+                    cenario.alterarCenario(&cam, &J, dJanela, opt);
                 }
             }
             else if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_s)

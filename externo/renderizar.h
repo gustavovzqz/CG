@@ -8,5 +8,5 @@
 #include "../tela/camera.h"
 #include <SDL2/SDL.h>
 
-void colorirMatriz(Janela janela, Canvas *canvas, Cenario cenario, int dJanela);
+void colorirMatriz(Camera &cam, Janela janela, Canvas *canvas, Cenario cenario, int dJanela, int opt);
 void renderizar(SDL_Renderer *renderer, Canvas canvas);
