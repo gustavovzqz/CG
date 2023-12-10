@@ -1,3 +1,0 @@
-/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles/main.dir
-/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles/edit_cache.dir
-/home/gustavofvv/Faculdade/S4/CG/atual/projeto/CMakeFiles/rebuild_cache.dir
