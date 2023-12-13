@@ -26,7 +26,7 @@ int main()
 
     Camera cam = Camera(Ponto(600, 280, 286), Ponto(600, 281, 286), Ponto(600, 280, 287));
 
-    Luz direcional = Luz(Intensidade(1, 1, 1), Vetor(0, -1, 0));
+    Luz direcional = Luz(Intensidade(1, 0, 0), Vetor(0, -1, 0));
     Luz luz_na_lampada = Luz(Ponto(600, 670, 600), Intensidade(0.9, 0.9, 0.1), Vetor(0, 1, 0), 0.53);
     Luz luz_da_lampada = Luz(Ponto(600, 670, 600), Intensidade(0.5, 0.5, 0.1), Vetor(0, -1, 0), 0.35);
     Luz luz_pontual_lampada = Luz(Ponto(600, 620, 600), Intensidade(0.1, 0.1, 0.1));
@@ -35,11 +35,11 @@ int main()
     Intensidade i_chao{0.4, 0.4, 0.4};
     Plano chao = Plano(Ponto(0, 0, 0), Vetor(0, 1, 0), i_chao, i_chao, i_chao, 3);
 
-    Plano fundo = Plano("assets/tijolos.png", Ponto(0, 0, 1200), Vetor(0, 0, -1), 10);
-    Plano frente = Plano("assets/tijolos.png", Ponto(0, 0, 0), Vetor(0, 0, 1), 10);
-    Plano parede_esq = Plano("assets/tijolos.png", Ponto(0, 0, 0), Vetor(1, 0, 0), 10);
-    Plano parede_dir = Plano("assets/tijolos.png", Ponto(1200, 0, 0), Vetor(-1, 0, 0), 10);
-    Plano teto = Plano("assets/tijolos.png", Ponto(0, 800, 0), Vetor(0, -1, 0), 10);
+    Plano fundo = Plano("assets/tijolos.png", Ponto(0, 0, 1200), Vetor(0, 0, -1), Vetor(0, 1, 0), 10);
+    Plano frente = Plano("assets/tijolos.png", Ponto(0, 0, 0), Vetor(0, 0, 1), Vetor(0, 1, 0), 10);
+    Plano parede_esq = Plano("assets/tijolos.png", Ponto(0, 0, 0), Vetor(1, 0, 0), Vetor(0, 1, 0), 10);
+    Plano parede_dir = Plano("assets/tijolos.png", Ponto(1200, 0, 0), Vetor(-1, 0, 0), Vetor(0, 1, 0), 10);
+    Plano teto = Plano("assets/tijolos.png", Ponto(0, 800, 0), Vetor(0, -1, 0), Vetor(0, 0, 1), 10);
 
     // LUMINÁRIA NO TETO
     Intensidade k_lum = Intensidade(0.3, 0.3, 0.3);
@@ -83,7 +83,6 @@ int main()
     Esfera olho2 = Esfera(Ponto(615, 295, 565), 13, olho, olho, olho, 20);
 
     Intensidade i_nariz{0.8, 0.5, 0.2};
-    // Cone nariz = Cone(Ponto(600, 290, 555), 8, Ponto(600, 280, 520), i_nariz, i_nariz, i_nariz, 10); //
     Cilindro nariz = Cilindro(Ponto(600, 290, 555), Ponto(600, 290, 530), 4, i_nariz, i_nariz, i_nariz, 10); //
 
     Intensidade k_chicol{1, 0.3, 0.3};
