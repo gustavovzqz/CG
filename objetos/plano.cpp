@@ -7,6 +7,7 @@ Plano::~Plano() { delete text; }
 
 Plano::Plano(Ponto p_pi, Vetor n_bar, Intensidade Ke, Intensidade Ka, Intensidade Kd, float m)
 {
+    this->vText = Vetor(0,0,0);
     this->p_pi = p_pi;
     this->n_bar = n_bar;
     this->Ke = Ke;
@@ -16,11 +17,12 @@ Plano::Plano(Ponto p_pi, Vetor n_bar, Intensidade Ke, Intensidade Ka, Intensidad
     text = nullptr;
 }
 
-Plano::Plano(const std::string path, Ponto p_pi, Vetor n_bar, float m)
+Plano::Plano(const std::string path, Ponto p_pi, Vetor n_bar, Vetor vText, float m)
 {
 
-    this->w = id.x - se.x;
-    this->h = se.y - id.y;
+    this->vText = vText;
+    this->vX = vetorial(n_bar, vText);
+    this->vY = vText; 
     this->text = new Textura{path};
     this->p_pi = p_pi;
     this->n_bar = n_bar;
@@ -42,12 +44,11 @@ void Plano::escalar(double r1, double r2, double r3)
 
 void Plano::appMatrix(Matriz m)
 {
+    vText = prodMV(m, vText);
+    vX = prodMV(m, vX);
+    vY = prodMV(m, vY);
     p_pi = prodMP(m, p_pi);
     n_bar = prodMV(m, n_bar);
-    se = prodMP(m, se);
-    id = prodMP(m, id);
-    w = id.x - se.x;
-    h = se.y - id.y;
 }
 
 Intensidade Plano::intersecta(Raio r, Luz i)
@@ -61,28 +62,15 @@ Intensidade Plano::intersecta(Raio r, Luz i)
 
     if (text)
     {
-        Vetor normal = n_bar;
         Vetor piMinusPPI = subP(pint, p_pi);
 
-        if (normal.x != 0 || normal.z != 0)
-        {
-            double a = (sqrt(pow(normal.x, 2) + pow(normal.z, 2)));
-            double alpha = -asin(normal.x / a);
-            Vetor normalWithYRotated = prodMV(rY(alpha), normal);
-            Vetor aux = prodMV(rY(alpha), piMinusPPI);
-            piMinusPPI = prodMV(rX(-acos(normalWithYRotated.y)), aux);
-        }
-
-        int x = piMinusPPI.x;
-        int z = piMinusPPI.z;
+        int x = innerProd(vX, piMinusPPI);
+        int z = innerProd(vY, piMinusPPI);
         int image_w = text->w;
         int image_h = text->h;
+        int imageY = 0; 
         int imageX = 0;
-        int imageY = 0;
-
-        /* Enteder melhor a lógica do que estamos fazendo:
-            1) Como lidar com repetição de fragmentos
-            2) Onde vai ficar o p_pi, faz diferença?*/
+       
         if (x < 0)
         {
             imageX = image_w - (abs(x) % image_w);

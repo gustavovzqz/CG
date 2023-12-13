@@ -54,8 +54,7 @@ void Cenario::atualizarCenarioCM(Camera cam)
         luz->appMatrix(cam.cm);
     }
 }
-/* Não vai ter mais isso, vai ser uma função Iluminar Objeto, que simplesmente já itera sobre o objeto
-e colore ele corretamente*/
+
 bool Cenario::ehIluminado(Luz l, Ponto pint_objeto, Objeto *obj)
 {
 
@@ -118,7 +117,7 @@ Cor Cenario::iluminarObjeto(Raio raio, Ponto pint_objeto, Objeto *obj, Cor bgCol
             intensity = somaI(obj->intersecta(raio, l), intensity);
         }
     }
-    obj->intersecta(raio, *luzes[0]);
+    obj->intersecta(raio, *luzes[0]); // Correção para a textura
     Ka = obj->Ka;
     intensity = somaI(arroba(Ka, iAmb), intensity);
 
@@ -329,15 +328,19 @@ void Cenario::alterarObjeto(Objeto *obj, Camera *cam)
     if (escolha == 2)
     {
         Intensidade ka, ke, kd;
+        double m;
         cout << "Insira o Ka:\n";
         ka = receberIntensidade();
         cout << "Insira o Ke:\n";
         ke = receberIntensidade();
         cout << "Insira o Kd:\n";
         kd = receberIntensidade();
+        cout << "Insira o m:\n";
+        cin >> m;
         obj->Ka = ka;
         obj->Ke = ke;
         obj->Kd = kd;
+        obj->m = m;
     }
     else if (escolha == 1)
     {
@@ -353,6 +356,7 @@ void Cenario::alterarObjeto(Objeto *obj, Camera *cam)
             cin >> n;
             cout << "Insira o ângulo: ";
             cin >> angulo;
+            // Não precisaria mudar o cenário todo, só o objeto.
             if (n == 1)
             {
                 atualizarCenarioCM(*cam);
@@ -393,7 +397,7 @@ void Cenario::alterarObjeto(Objeto *obj, Camera *cam)
             cin >> fy;
             cin >> fz;
             atualizarCenarioCM(*cam);
-            obj->appMatrix(mE(fx, fy, fz));
+            obj->escalar(fx, fy, fz);
             atualizarCenarioMC(*cam);
         }
         else if (choice == 3)
@@ -403,7 +407,7 @@ void Cenario::alterarObjeto(Objeto *obj, Camera *cam)
             Matriz m = id();
             cout << "Insira o gama pra cisalhamento: ";
             cin >> gama;
-            cout << "1- yx\n2- xy\n3- xz\n4- zx\n5- zy\n";
+            cout << "1- yx\n2- xy\n3- xz\n4- zx\n5- zy\n6- yz\n";
             cin >> opt;
             switch (opt)
             {
@@ -422,6 +426,8 @@ void Cenario::alterarObjeto(Objeto *obj, Camera *cam)
             case 5:
                 m = Czy(gama);
                 break;
+            case 6:
+                m = Cyz(gama);
             default:
                 break;
             }

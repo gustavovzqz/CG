@@ -7,12 +7,13 @@ class Plano : public Objeto
 {
 public:
     Textura *text;
-    Ponto p_pi, id, se;
+    Ponto p_pi;
     int h, w;
     Vetor n_bar;
+    Vetor vText, vY, vX;
     Plano();
     Plano(Ponto p_pi, Vetor n_bar, Intensidade Ke, Intensidade Ka, Intensidade Kd, float m);
-    Plano(const std::string path, Ponto p_pi, Vetor n_bar, float m);
+    Plano(const std::string path, Ponto p_pi, Vetor n_bar, Vetor vText, float m);
     Intensidade intersecta(Raio r, Luz i);
     void appMatrix(Matriz m);
     void escalar(double, double, double);

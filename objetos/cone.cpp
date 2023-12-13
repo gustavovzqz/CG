@@ -72,7 +72,6 @@ void Cone::escalar(double r1, double r2, double r3)
     (void)r3;
     rb *= r1;
     h *= r1;
-    h *= r1;
     v = addPV(cb, prodVetorC(dc, h));
 }
 
@@ -92,7 +91,7 @@ Intensidade Cone::intersecta(Raio r, Luz i)
     Vetor n;
     Ponto pint;
 
-    // Ta feito caso a caso saporra, da pra melhorar com certeza.
+    // Ta feito caso a caso, da pra melhorar com certeza.
     if (t1 == -1 && t2 == -1)
         tint = -1;
     else if (t1 != -1 && t2 == -1)

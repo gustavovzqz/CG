@@ -38,10 +38,8 @@ void colorirMatriz(Camera &cam, Janela janela, Canvas *canvas, Cenario cenario, 
             else
             {
                 Ponto pint_objeto = addPV(raio.pin, prodVetorC(raio.dr, obj->tInt(raio)));
-                /* A gente passa pro objeto o Cenário
-                   A função de iluminação do objeto será do próprio cenário...*/
                 canvas->matriz[l][c] = cenario.iluminarObjeto(raio, pint_objeto, obj, bgColor);
-            } // Esfera será uma lista de objetos (cenário)
+            } 
         }
     }
 }
