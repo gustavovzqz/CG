@@ -5,6 +5,7 @@
 ![image](https://github.com/gustavovzqz/CG/assets/101258926/9e62d5b1-60a9-4a9f-9cb6-cd7d2f2c75b7)
 
 This project aims to demonstrate a basic implementation of pixel rendering using the SDL (Simple DirectMedia Layer) library. The primary goal is to recreate fundamental features found in renowned graphics libraries like OpenGL and Vulkan. By using SDL's simple yet powerful functions, this project showcases the foundational concepts of rendering pixels on a screen.
+
 ![image](https://github.com/gustavovzqz/CG/assets/101258926/4e239c83-e62e-464b-b44c-c89954b92ae6)
 
 
