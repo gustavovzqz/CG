@@ -18,7 +18,7 @@ Make sure you have the following installed on your system:
 
 ## Getting Started
 
-This project is an example implementation of pixel rendering using the SDL (Simple DirectMedia Layer) library. To compile the project, navigate to the directories and use the CMake provided within the project.
+To compile, navigate to the directories and use the CMake provided within the project.
 
 You can left click in an object to use the "pick" function and right click on the screen to interact with the environment.
 
